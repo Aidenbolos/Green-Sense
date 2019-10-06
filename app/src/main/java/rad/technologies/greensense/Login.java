@@ -15,7 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/*Ryan McAdie
+/*
+Ryan McAdie
 N01158072
  */
 public class Login extends AppCompatActivity {
