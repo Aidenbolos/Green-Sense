@@ -15,10 +15,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/*
-Ryan McAdie
-N01158072
- */
 public class Login extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
@@ -41,10 +37,10 @@ public class Login extends AppCompatActivity {
         // set the view now
         setContentView(R.layout.activity_login);
 
-        inputEmail = findViewById(R.id.email);
-        inputPassword = findViewById(R.id.password);
-        progressBar = findViewById(R.id.progressBar);
-        btnLogin = findViewById(R.id.btn_login);
+        inputEmail = (EditText) findViewById(R.id.email);
+        inputPassword = (EditText) findViewById(R.id.password);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnLogin = (Button) findViewById(R.id.btn_login);
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();

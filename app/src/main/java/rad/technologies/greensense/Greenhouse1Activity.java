@@ -11,15 +11,12 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
-public class MainActivity extends AppCompatActivity {
+public class Greenhouse1Activity extends AppCompatActivity {
     private FirebaseAuth auth;
     private static final int pic_id = 123;
 
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    Intent intent = new Intent(Greenhouse1Activity.this, Login.class);
                     startActivity(intent);
                     finish();
                 }
@@ -46,36 +43,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_greenhouse1);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-        // Locate the button in activity_main.xml
-        Button button1 = (Button) findViewById(R.id.btn_greenhouse1);
-
-        // Capture button clicks
-        button1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, Greenhouse1Activity.class);
-                startActivity(myIntent);
-            }
-        });
-
-        // Locate the button in activity_main.xml
-        Button button2 = (Button) findViewById(R.id.btn_greenhouse2);
-
-        // Capture button clicks
-        button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, Greenhouse2Activity.class);
-                startActivity(myIntent);
-            }
-        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
@@ -120,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_signout:
                 try {
                     signOut();
-                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    Intent intent = new Intent(Greenhouse1Activity.this, Login.class);
                     startActivity(intent);
                     finish();
                 } catch (ActivityNotFoundException e) {
@@ -135,4 +107,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-

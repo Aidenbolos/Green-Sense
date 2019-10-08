@@ -6,26 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_gravity="center"
+        android:text="Welcome to Humber's Greenhouses"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
 
-    <Button
-        android:id="@+id/signOut"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Out"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="Humber Greenhouse"
+        android:src="@drawable/humber_plants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.30" />
+
+    <Button
+        android:id="@+id/btn_greenhouse1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="View Greenhouse 1"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.60"/>
+
+    <Button
+        android:id="@+id/btn_greenhouse2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="View Greenhouse 2"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.70"/>
+
+    <Button
+        android:id="@+id/btn_info"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Information"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.80"/>
+
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Settings"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.90"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
