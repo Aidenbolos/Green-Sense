@@ -1,2 +1,2 @@
-include ':app', ':newdesign'
+include ':app', ':newdesign', ':newdesign22'
 rootProject.name='GreenSense'

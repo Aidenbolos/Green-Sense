@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="rad.technologies.greensense.ui.activity.GrenHouseControlSystemActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvGreenSense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GREEN SENSE"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/black" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlRemoteDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGreenSense"
+            android:background="@drawable/round_bg_white"
+            android:layout_marginEnd="@dimen/padding_start_end_20dp"
+            android:layout_marginStart="@dimen/padding_start_end_20dp"
+            android:layout_marginTop="20dp">
+
+
+            <TextView
+                android:id="@+id/tvGreenHouseControlSystem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GREENHOUSE CONTROL SYSTEM"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/middle_text_size"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+
+            <ImageView
+                android:id="@+id/ivRemote"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/tvGreenHouseControlSystem"
+                android:layout_toLeftOf="@id/tvRemoteDevice"
+                android:src="@drawable/remote" />
+
+
+            <TextView
+                android:id="@+id/tvRemoteDevice"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvGreenHouseControlSystem"
+                android:layout_centerHorizontal="true"
+                android:text="REMOTE DEVICE"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/black" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sw_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:layout_below="@id/tvRemoteDevice"
+                android:textStyle="bold"
+                android:theme="@style/SCBSwitch" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlRemoteDevice"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/flTempAndHumidity"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_bg_white">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/temperature"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/padding_start_end_20dp"
+                        android:layout_marginStart="20dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvTempAndHumidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="@dimen/middle_text_size"
+                        android:paddingStart="@dimen/padding_start_end_20dp"
+                        android:paddingEnd="@dimen/padding_start_end_20dp"
+                        android:text="Temperature Humidity &amp;\nMoisture" />
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/flManualControl"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:paddingStart="@dimen/padding_start_end_20dp"
+                    android:background="@drawable/rounded_button_white"
+                    android:paddingLeft="@dimen/padding_start_end_20dp">
+
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/controls"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/padding_start_end_20dp"
+                        android:layout_marginStart="20dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvManualControl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="@dimen/middle_text_size"
+                        android:paddingStart="@dimen/padding_start_end_15dp"
+                        android:paddingEnd="@dimen/padding_start_end_15dp"
+                        android:text="Manual Control" />
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</ScrollView>
