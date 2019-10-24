@@ -1,4 +1,4 @@
-package rad.technologies.greensense.ui.activity;
+package rad.technologies.greensense;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +31,6 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp_and_humidity);
-        Objects.requireNonNull(getSupportActionBar()).hide();
         sbTemp = findViewById(R.id.sbTemp);
         sbHumidity = findViewById(R.id.sbHumidity);
         ivBack = findViewById(R.id.ivBack);

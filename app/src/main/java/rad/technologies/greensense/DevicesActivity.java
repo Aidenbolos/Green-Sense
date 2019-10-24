@@ -1,4 +1,4 @@
-package rad.technologies.greensense.ui.activity;
+package rad.technologies.greensense;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +20,6 @@ public class DevicesActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_devices);
-        Objects.requireNonNull(getSupportActionBar()).hide();
         ivBack=findViewById(R.id.ivBack);
         ivBack.setOnClickListener(this);
 
