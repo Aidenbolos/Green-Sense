@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

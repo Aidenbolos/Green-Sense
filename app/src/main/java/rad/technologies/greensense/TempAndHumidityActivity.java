@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
