@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;

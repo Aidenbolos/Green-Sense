@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
