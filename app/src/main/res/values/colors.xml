@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#9f5919</color>
     <color name="colorAccent">#80CD29</color>
     <color name="white">#ffffff</color>
+    <color name="grayColor">#eeeeee</color>
+    <color name="edittext_background">#F8F8FF</color>
+    <color name="green">#83CC23</color>
+
 </resources>

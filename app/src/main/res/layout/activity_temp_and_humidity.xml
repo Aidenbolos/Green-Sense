@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="rad.technologies.greensense.TempAndHumidityActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/arrow_right_dark"
+            android:layout_marginLeft="10dp" />
+
+
+        <TextView
+            android:id="@+id/tvGreenhouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivBack"
+            android:text="GREENHOUSE TEMP &amp; HUMIDITY"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGreenhouse"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/padding_start_end_20dp"
+            android:layout_marginEnd="@dimen/padding_start_end_20dp"
+            android:background="@drawable/round_bg_white">
+
+            <ImageView
+                android:id="@+id/ivTemp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@mipmap/temperature"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tvTemerature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GREENHOUSE  TEMPERATURE"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/ivTemp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvGreenHouseTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTemerature"
+                android:text="Temperature   70F"
+                android:layout_toRightOf="@id/ivTemp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green" />
+
+
+            <ImageView
+                android:id="@+id/ivRefreshTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh_black_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp" />
+
+            <SeekBar
+                android:id="@+id/sbTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTemp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:thumb="@drawable/custom_thumb" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlHumidty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlTemp"
+            android:layout_marginTop="@dimen/padding_start_end_20dp"
+            android:layout_marginStart="@dimen/padding_start_end_20dp"
+            android:layout_marginEnd="@dimen/padding_start_end_20dp"
+            android:background="@drawable/round_bg_white">
+
+            <ImageView
+                android:id="@+id/ivHumdity"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@mipmap/drop"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tvHumdity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GREENHOUSE HUMIDITY"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/ivHumdity"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvGreenHouseHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvHumdity"
+                android:text="Humidity=   70RM"
+                android:layout_toRightOf="@id/ivHumdity"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green" />
+
+
+            <ImageView
+                android:id="@+id/ivRefreshHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh_black_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp" />
+
+
+            <SeekBar
+                android:id="@+id/sbHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivHumdity"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:thumb="@drawable/custom_thumb" />
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rlMoisture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlHumidty"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/padding_start_end_20dp"
+            android:layout_marginEnd="@dimen/padding_start_end_20dp"
+            android:background="@drawable/round_bg_white">
+
+            <ImageView
+                android:id="@+id/ivMoisture"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@mipmap/clouds"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tvMoisture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GREENHOUSE  MOISTURE"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/ivMoisture"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvMoistureLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMoisture"
+                android:text="Moisture Level=  70rPH"
+                android:layout_toRightOf="@id/ivMoisture"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green" />
+
+
+            <ImageView
+                android:id="@+id/ivRefreshMoistureLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh_black_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp" />
+
+
+            <SeekBar
+                android:id="@+id/spMoistureLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivMoisture"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:thumb="@drawable/custom_thumb" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

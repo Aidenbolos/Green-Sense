@@ -3,4 +3,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="logo_w_h">100dp</dimen>
+    <dimen name="title_text_size">20dp</dimen>
+    <dimen name="padding_start_end_20dp">20dp</dimen>
+    <dimen name="padding_start_end_15dp">15dp</dimen>
+    <dimen name="round_radius">10dp</dimen>
+    <dimen name="middle_text_size">18sp</dimen>
+    <dimen name="round_remote_device_button">20dp</dimen>
 </resources>

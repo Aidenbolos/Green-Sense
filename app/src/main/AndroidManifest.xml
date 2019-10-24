@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DevicesActivity"></activity>
+        <activity android:name=".TempAndHumidityActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Greenhouse1Activity"
             android:parentActivityName=".MainActivity" >
