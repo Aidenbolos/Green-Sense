@@ -2,20 +2,28 @@ package rad.technologies.greensense;
 //R.A.D. Technologies
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
-import rad.technologies.greensense.R;
-
-import java.util.Objects;
 import java.util.Random;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+
 public class TempAndHumidityActivity extends AppCompatActivity implements View.OnClickListener {
+
+    //add Firebase Database stuff
+    private FirebaseFirestore db;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     SeekBar sbTemp, sbHumidity;
@@ -29,6 +37,9 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        db = FirebaseFirestore.getInstance();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp_and_humidity);
         sbTemp = findViewById(R.id.sbTemp);
@@ -61,33 +72,63 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomTempValue() {
 
-        final int minT = 1;
-        final int maxT = 100;
-        int randomTemp = new Random().nextInt((maxT - minT) + 1) + minT;
-        tvGreenHouseTemp.setText("Temperature   " + randomTemp + "F");
-        sbTemp.setProgress(randomTemp);
-
+        db.collection("Readings").document("Values").collection("Data")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                tvGreenHouseTemp.setText("Temperature = " + document.get("Temp") + "C");
+                                int temp = ((Long) document.get("Temp")).intValue();
+                                sbTemp.setProgress(temp);
+                            }
+                        } else {
+                            tvGreenHouseTemp.setText("Error getting documents." + task.getException());
+                        }
+                    }
+                });
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomHumidityValue() {
 
-
-        final int minH = 1;
-        final int maxH = 100;
-        final int randomHumidity = new Random().nextInt((maxH - minH) + 1) + minH;
-        tvGreenHouseHumidity.setText("Humidity=   " + randomHumidity + "RM");
-        sbHumidity.setProgress(randomHumidity);
+        db.collection("Readings").document("Values").collection("Data")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                tvGreenHouseHumidity.setText("Humidity = " + document.get("Humidity") + "RM");
+                                int hum = ((Long) document.get("Humidity")).intValue();
+                                sbHumidity.setProgress(hum);
+                            }
+                        } else {
+                            tvGreenHouseHumidity.setText("Error getting documents." + task.getException());
+                        }
+                    }
+                });
     }
 
     private void SetMoistureLevelValue() {
-        final int min = 1;
-        final int max = 100;
-        int randomMoistureValue = new Random().nextInt((max - min) + 1) + min;
-
-        tvMoistureLevel.setText("Moisture Level= " + randomMoistureValue + "rPH");
-        spMoistureLevel.setProgress(randomMoistureValue);
+        db.collection("Readings").document("Values").collection("Data")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                tvMoistureLevel.setText("Soil Moisture = " + document.get("Soil") + "rPH");
+                                int soil = ((Long) document.get("Soil")).intValue();
+                                spMoistureLevel.setProgress(soil);
+                            }
+                        } else {
+                            tvMoistureLevel.setText("Error getting documents." + task.getException());
+                        }
+                    }
+                });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
