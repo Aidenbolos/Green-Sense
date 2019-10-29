@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
+
     private FirebaseAuth auth;
     private static final int pic_id = 123;
 

@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-public class Greenhouse2Activity extends AppCompatActivity implements View.OnClickListener {
+public class Greenhouse1Activity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth auth;
     private static final int pic_id = 123;
 
@@ -40,7 +40,7 @@ public class Greenhouse2Activity extends AppCompatActivity implements View.OnCli
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    Intent intent = new Intent(Greenhouse2Activity.this, Login.class);
+                    Intent intent = new Intent(Greenhouse1Activity.this, Login.class);
                     startActivity(intent);
                     finish();
                 }
@@ -56,6 +56,10 @@ public class Greenhouse2Activity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_greenhouse1);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         flTempAndHumidity = findViewById(R.id.flTempAndHumidity);
         flManualControl = findViewById(R.id.flManualControl);
@@ -79,12 +83,12 @@ public class Greenhouse2Activity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.flTempAndHumidity:
                 GreenBackgroundFunction(flTempAndHumidity, tvTempAndHumidity);
-                startActivity(new Intent(Greenhouse2Activity.this, TempAndHumidityActivity.class));
+                startActivity(new Intent(Greenhouse1Activity.this, TempAndHumidityActivity.class));
                 break;
 
             case R.id.flManualControl:
                 GreenBackgroundFunction(flManualControl, tvManualControl);
-                startActivity(new Intent(Greenhouse2Activity.this, DevicesActivity.class));
+                startActivity(new Intent(Greenhouse1Activity.this, DevicesActivity.class));
 
                 break;
 
@@ -160,7 +164,7 @@ public class Greenhouse2Activity extends AppCompatActivity implements View.OnCli
             case R.id.action_signout:
                 try {
                     signOut();
-                    Intent intent = new Intent(Greenhouse2Activity.this, Login.class);
+                    Intent intent = new Intent(Greenhouse1Activity.this, Login.class);
                     startActivity(intent);
                     finish();
                 } catch (ActivityNotFoundException e) {
