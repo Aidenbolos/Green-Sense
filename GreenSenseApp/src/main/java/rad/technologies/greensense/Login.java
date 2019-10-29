@@ -21,6 +21,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private Button btnLogin;
+    private Button btnGuest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,5 +88,18 @@ public class Login extends AppCompatActivity {
                         });
             }
         });
+
+        btnGuest = (Button) findViewById(R.id.btn_guest);
+
+        // Capture button clicks
+        btnGuest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(Login.this, GuestActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
     }
 }
