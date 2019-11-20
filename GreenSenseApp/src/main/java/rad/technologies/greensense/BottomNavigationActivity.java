@@ -34,35 +34,8 @@ public class BottomNavigationActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         getSupportActionBar().setTitle("Green Sense");
     }
-
-    BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-            switch (item.getItemId()) {
-                case R.id.nav_green_one:
-                case R.id.nav_green_two:
-                    ViewChanger.switchToFragment(BottomNavigationActivity.this, new HomeFragment(), R.id.container);
-                    return true;
-                case R.id.nav_build:
-                    ViewChanger.switchToFragment(BottomNavigationActivity.this, new BuildYourOwnFragment(), R.id.container);
-                    return true;
-                case R.id.nav_contact:
-                    ViewChanger.switchToFragment(BottomNavigationActivity.this, new ContactFragment(), R.id.container);
-                    return true;
-            }
-            return false;
-        }
-    };
-
-
-
-    }
-
+}
 
 
