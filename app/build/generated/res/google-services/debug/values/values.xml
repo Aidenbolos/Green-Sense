@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">281696490569-u6kvnl78akebltgv82o6qp0m5nuokv4h.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://greensense-6c575.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">281696490569</string>
+    <string name="google_api_key" translatable="false">AIzaSyAGzdXqfmZrkQSjYV00kcvLfdAb5TdACts</string>
+    <string name="google_app_id" translatable="false">1:281696490569:android:ef4406a48c7f56a52cdb98</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAGzdXqfmZrkQSjYV00kcvLfdAb5TdACts</string>
+    <string name="google_storage_bucket" translatable="false">greensense-6c575.appspot.com</string>
+    <string name="project_id" translatable="false">greensense-6c575</string>
+</resources>
