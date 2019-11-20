@@ -13,8 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import rad.technologies.greensense.ui.contact.ContactFragment;
 
 public class GuestActivity extends AppCompatActivity {
 
@@ -48,6 +51,16 @@ public class GuestActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        // Locate the button in activity_main.xml
+
+
+        BottomNavigationView navView  = (BottomNavigationView) findViewById(R.id.nav_view);
+
+
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
 
@@ -106,4 +119,35 @@ public class GuestActivity extends AppCompatActivity {
         return true;
     }
 
+
+    BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_green_one:
+                    Intent myIntent1 = new Intent(GuestActivity.this, Greenhouse1Activity.class);
+                    startActivity(myIntent1);
+                    return true;
+                case R.id.nav_green_two:
+                    Intent myIntent = new Intent(GuestActivity.this, Greenhouse2Activity.class);
+                    startActivity(myIntent);
+                    return true;
+                case R.id.info:
+                    Intent myIntent3 = new Intent(GuestActivity.this, PlantInfoActivity.class);
+                    startActivity(myIntent3);
+                    return true;
+                case R.id.notes:
+                    Intent myIntent4 = new Intent(GuestActivity.this, NotesActivity.class);
+                    startActivity(myIntent4);
+                    return true;
+            }
+
+            return  false;
+        }
+    };
+
+
 }
+

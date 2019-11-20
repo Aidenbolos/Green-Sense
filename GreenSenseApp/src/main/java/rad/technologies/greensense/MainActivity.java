@@ -3,6 +3,7 @@ package rad.technologies.greensense;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -15,8 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import rad.technologies.greensense.genrelUtills.ViewChanger;
+import rad.technologies.greensense.ui.buildYourOwn.BuildYourOwnFragment;
+import rad.technologies.greensense.ui.contact.ContactFragment;
+import rad.technologies.greensense.ui.home.HomeFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,36 +56,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
         // Locate the button in activity_main.xml
-        Button button1 = (Button) findViewById(R.id.btn_greenhouse1);
 
-        // Capture button clicks
-        button1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
 
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, Greenhouse1Activity.class);
-                startActivity(myIntent);
-            }
-        });
+        BottomNavigationView navView  = (BottomNavigationView) findViewById(R.id.nav_view);
 
-        // Locate the button in activity_main.xml
-        Button button2 = (Button) findViewById(R.id.btn_greenhouse2);
 
-        // Capture button clicks
-        button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, Greenhouse2Activity.class);
-                startActivity(myIntent);
-            }
-        });
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -134,6 +126,37 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
+
+    BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_green_one:
+                    Intent myIntent1 = new Intent(MainActivity.this, Greenhouse1Activity.class);
+                    startActivity(myIntent1);
+                    return true;
+                case R.id.nav_green_two:
+                    Intent myIntent = new Intent(MainActivity.this, Greenhouse2Activity.class);
+                    startActivity(myIntent);
+                    return true;
+                case R.id.info:
+                    Intent myIntent3 = new Intent(MainActivity.this, PlantInfoActivity.class);
+                    startActivity(myIntent3);
+                    return true;
+                case R.id.notes:
+                    Intent myIntent4 = new Intent(MainActivity.this, NotesActivity.class);
+                    startActivity(myIntent4);
+                    return true;
+            }
+
+            return  false;
+        }
+    };
+
 
 }
 

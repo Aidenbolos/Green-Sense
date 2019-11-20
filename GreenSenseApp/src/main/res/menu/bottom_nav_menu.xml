@@ -12,11 +12,11 @@
         android:title="Green House 2" />
 
     <item
-        android:id="@+id/nav_build"
+        android:id="@+id/info"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Build Your Own" />
+        android:title="Information" />
     <item
-        android:id="@+id/nav_contact"
+        android:id="@+id/notes"
         android:icon="@drawable/ic_contacts_black_24dp"
         android:title="Contact Us" />
 
