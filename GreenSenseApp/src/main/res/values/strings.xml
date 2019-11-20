@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GreenSense</string>
+    <string name="email">Email</string>
+    <string name="auth_failed">Authentication failed, check your email and password</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="greensense_logo">GreenSense Logo</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="cactus">Cactus, (family Cactaceae), plural cacti or cactuses, flowering plant family (order Caryophyllales with more than 2,000 species and about 175 genera. Cacti are native through most of the length of North and South America, from British Columbia and Alberta southward; the southernmost limit of their range extends far into Chile and Argentina. Mexico has the greatest number and variety of species. The only cacti possibly native to the Old World are members of the genus Rhipsalis, occurring in East Africa, Madagascar, and Sri Lanka. Although a few cactus species inhabit tropical or subtropical areas, most live in and are well adapted to dry regions. See also list of plants in the family Cactaceae.</string>
+    <string name="herbs">In general use, herbs are plants with savory or aromatic properties that are used for flavoring and garnishing food, medicinal purposes, or for fragrances; excluding vegetables and other plants consumed for macronutrients. Culinary use typically distinguishes herbs from spices. Herbs generally refers to the leafy green or flowering parts of a plant (either fresh or dried), while spices are usually dried and produced from other parts of the plant, including seeds, bark, roots and fruits.
+
+Herbs have a variety of uses including culinary, medicinal, and in some cases, spiritual. General usage of the term "herb" differs between culinary herbs and medicinal herbs; in medicinal or spiritual use, any parts of the plant might be considered as "herbs", including leaves, roots, flowers, seeds, root bark, inner bark (and cambium), resin and pericarp.
+
+The word "herb" is pronounced /hɜːrb/ in Commonwealth English, but /ɜːrb/ is common among North American English speakers and those from other regions where h-dropping occurs. In botany, the word "herb" is used as a synonym for "herbaceous plant".</string>
+    <string name="ferns">A fern is a member of a group of vascular plants (plants with xylem and phloem) that reproduce via spores and have neither seeds nor flowers. They differ from mosses by being vascular, i.e., having specialized tissues that conduct water and nutrients and in having life cycles in which the sporophyte is the dominant phase. Ferns have complex leaves called megaphylls, that are more complex than the microphylls of clubmosses. Most ferns are leptosporangiate ferns, sometimes referred to as true ferns. They produce coiled fiddleheads that uncoil and expand into fronds.[3] The group includes about 10,560 known extant species.
+
+Ferns are defined here in the broad sense, being all of the Polypodiopsida, comprising both the leptosporangiate (Polypodiidae) and eusporangiate ferns, the latter itself comprising ferns other than those denominated true ferns, including horsetails or scouring rushes, whisk ferns, marattioid ferns, and ophioglossoid ferns.</string>
+    <string name="confiers">The Conifers are cone-bearing seed plants. Most are trees; some are shrubs. They are formally the Division Pinophyta or Coniferophyta.
+
+Conifers are Gymnosperms. They are cone-bearing seed plants with vascular tissue. All living conifers are woody plants, and most are trees.
+
+Living conifers are all in the order Pinales. Typical examples include cedars, cypresses, firs, junipers, kauris, larches, pines, redwoods, spruces, and yews.
+
+Species of conifers can be found in almost all parts of the world, and are often the most common plants in their habitats, as in the taiga. Conifers are of great economic value, and their wood is mainly used for timber and paper making The wood of conifers is known as softwood, though yew wood is actually quite hard. The division Coniferae contains about 700 living species.</string>
+
+</resources>
