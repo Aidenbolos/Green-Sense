@@ -1,4 +1,5 @@
 package rad.technologies.greensense;
+//R.A.D. Technologies
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -77,7 +78,7 @@ public class notes_frag extends Fragment {
 
                                 SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("rad.technologies.greensense", Context.MODE_PRIVATE);
 
-                                HashSet<String> set =new HashSet(NotesActivity.notes);
+                                HashSet<String> set =new HashSet(notes_frag.notes);
 
                                 sharedPreferences.edit().putStringSet("notes",set).apply();
 

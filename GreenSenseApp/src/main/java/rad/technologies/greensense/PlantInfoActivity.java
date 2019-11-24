@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;

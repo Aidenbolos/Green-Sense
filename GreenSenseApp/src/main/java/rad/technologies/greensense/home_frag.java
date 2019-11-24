@@ -1,4 +1,5 @@
 package rad.technologies.greensense;
+//R.A.D. Technologies
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;

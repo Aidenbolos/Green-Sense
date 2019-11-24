@@ -1,28 +1,10 @@
 package rad.technologies.greensense;
+//R.A.D. Technologies
 
-import android.Manifest;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import rad.technologies.greensense.R;
-import rad.technologies.greensense.genrelUtills.ViewChanger;
-import rad.technologies.greensense.ui.buildYourOwn.BuildYourOwnFragment;
-import rad.technologies.greensense.ui.contact.ContactFragment;
-import rad.technologies.greensense.ui.home.HomeFragment;
+
 
 public class BottomNavigationActivity extends AppCompatActivity {
     final int CAMERA_CAPTURE = 1;

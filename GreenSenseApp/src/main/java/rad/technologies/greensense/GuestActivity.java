@@ -1,5 +1,5 @@
 package rad.technologies.greensense;
-
+//R.A.D. Technologies
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -127,11 +127,11 @@ public class GuestActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.nav_green_one:
-                    Intent myIntent1 = new Intent(GuestActivity.this, Greenhouse1Activity.class);
+                    Intent myIntent1 = new Intent(GuestActivity.this, greenhouse1_frag.class);
                     startActivity(myIntent1);
                     return true;
                 case R.id.nav_green_two:
-                    Intent myIntent = new Intent(GuestActivity.this, Greenhouse2Activity.class);
+                    Intent myIntent = new Intent(GuestActivity.this, greenhouse2_frag.class);
                     startActivity(myIntent);
                     return true;
                 case R.id.info:
@@ -139,7 +139,7 @@ public class GuestActivity extends AppCompatActivity {
                     startActivity(myIntent3);
                     return true;
                 case R.id.notes:
-                    Intent myIntent4 = new Intent(GuestActivity.this, NotesActivity.class);
+                    Intent myIntent4 = new Intent(GuestActivity.this, notes_frag.class);
                     startActivity(myIntent4);
                     return true;
             }

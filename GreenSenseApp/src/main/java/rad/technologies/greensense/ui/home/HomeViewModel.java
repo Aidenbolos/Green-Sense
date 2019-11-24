@@ -1,5 +1,5 @@
 package rad.technologies.greensense.ui.home;
-
+//R.A.D. Technologies
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
