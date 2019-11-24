@@ -27,7 +27,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme.NoActionBar" >
+        <activity
+            android:name="rad.technologies.greensense.NoteEditorActivity"
+            android:parentActivityName="rad.technologies.greensense.notes_frag" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".notes_frag" />
+        </activity>
+        <activity
+            android:name="rad.technologies.greensense.BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity android:name="rad.technologies.greensense.PlantInfoActivity" />
+        <activity android:name="rad.technologies.greensense.NotesActivity" />
+        <activity android:name="rad.technologies.greensense.ui.contact.ContactFragment" />
         <activity android:name="rad.technologies.greensense.GuestActivity" />
         <activity android:name="rad.technologies.greensense.Login" >
             <intent-filter>

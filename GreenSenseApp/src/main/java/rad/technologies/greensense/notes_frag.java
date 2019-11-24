@@ -5,58 +5,56 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class NotesActivity extends AppCompatActivity {
-
+public class notes_frag extends Fragment {
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
 
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_notes_frag, null);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes);
-        Toolbar toolbar =(Toolbar ) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ListView listView = (ListView) findViewById(R.id.listView);
-
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("rad.technologies.greensense", Context.MODE_PRIVATE);
-
+        SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("rad.technologies.greensense", Context.MODE_PRIVATE);
+        ListView listView = root.findViewById(R.id.listView);
         HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet("notes", null);
-
 
         if (set == null) {
             notes.add("Add Note");
         }else {
             notes = new ArrayList(set);
         }
-
-
         notes.add("Add Note");
 
-        arrayAdapter = new ArrayAdapter (this, android.R.layout.simple_list_item_1, notes);
-
+        arrayAdapter = new ArrayAdapter (getActivity(),android.R.layout.simple_list_item_1, notes);
         listView.setAdapter(arrayAdapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Intent intent = new Intent(getApplicationContext(), NoteEditorActivity.class);
+                Intent intent = new Intent(getActivity().getBaseContext(), NoteEditorActivity.class);
                 intent.putExtra("noteId", i);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab = root.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it=new Intent(getActivity(), NoteEditorActivity.class);
+                startActivity(it);
             }
         });
 
@@ -66,7 +64,7 @@ public class NotesActivity extends AppCompatActivity {
 
                 final int itemToDelete = i;
 
-                new AlertDialog.Builder(NotesActivity.this)
+                new AlertDialog.Builder(getActivity())
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setTitle("Are you sure?")
                         .setMessage("Do you want to delete this note?")
@@ -77,7 +75,7 @@ public class NotesActivity extends AppCompatActivity {
                                 notes.remove(itemToDelete);
                                 arrayAdapter.notifyDataSetChanged();
 
-                                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("rad.technologies.greensense", Context.MODE_PRIVATE);
+                                SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("rad.technologies.greensense", Context.MODE_PRIVATE);
 
                                 HashSet<String> set =new HashSet(NotesActivity.notes);
 
@@ -91,24 +89,6 @@ public class NotesActivity extends AppCompatActivity {
                 return true;
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater ();
-        inflater.inflate ( R.menu.add_note_menu,menu );
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId ()){
-            case R.id.add_note:
-                Intent it=new Intent(NotesActivity.this, NoteEditorActivity.class);
-                startActivity(it);
-                return  true;
-        }
-        return super.onOptionsItemSelected ( item );
+        return root;
     }
 }
-
