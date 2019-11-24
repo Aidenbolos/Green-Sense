@@ -1,5 +1,5 @@
 package rad.technologies.greensense.ui.contact;
-
+//R.A.D. Technologies
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
