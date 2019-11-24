@@ -2,22 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_green_one"
+        android:id="@+id/home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Green House 1" />
+        android:title="@string/Home" />
+    <item
+        android:id="@+id/nav_green_one"
+        android:icon="@drawable/ic_ghouse_24dp"
+        android:title="@string/Green_House_1" />
 
     <item
         android:id="@+id/nav_green_two"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Green House 2" />
+        android:icon="@drawable/ic_ghouse_24dp"
+        android:title="@string/Green_House_2" />
+
 
     <item
-        android:id="@+id/info"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Information" />
-    <item
         android:id="@+id/notes"
-        android:icon="@drawable/ic_contacts_black_24dp"
-        android:title="Contact Us" />
+        android:icon="@drawable/ic_note_black_24dp"
+        android:title="@string/Notes" />
 
 </menu>

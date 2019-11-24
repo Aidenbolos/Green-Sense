@@ -8,5 +8,6 @@
     <dimen name="padding_start_end_15dp">15dp</dimen>
     <dimen name="round_radius">10dp</dimen>
     <dimen name="middle_text_size">18sp</dimen>
+    <dimen name="small_text_size">16sp</dimen>
     <dimen name="round_remote_device_button">20dp</dimen>
 </resources>

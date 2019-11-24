@@ -1,10 +1,10 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,21 +12,13 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import rad.technologies.greensense.genrelUtills.ViewChanger;
-import rad.technologies.greensense.ui.buildYourOwn.BuildYourOwnFragment;
-import rad.technologies.greensense.ui.contact.ContactFragment;
-import rad.technologies.greensense.ui.home.HomeFragment;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     private FirebaseAuth auth;
     private static final int pic_id = 123;
@@ -59,16 +51,50 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        // Locate the button in activity_main.xml
 
+        //loading the default fragment
+        loadFragment(new home_frag());
 
-        BottomNavigationView navView  = (BottomNavigationView) findViewById(R.id.nav_view);
+        //getting bottom navigation view and attaching the listener
+        BottomNavigationView navigation = findViewById(R.id.nav_view);
+        navigation.setOnNavigationItemSelectedListener(this);
 
+    }
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
 
+        switch (item.getItemId()) {
+            case R.id.home:
+                fragment = new home_frag();
+                break;
+
+            case R.id.nav_green_one:
+                fragment = new greenhouse1_frag();
+                break;
+
+            case R.id.nav_green_two:
+                fragment = new greenhouse2_frag();
+                break;
+
+            case R.id.notes:
+                fragment = new notes_frag();
+                break;
+        }
+
+        return loadFragment(fragment);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_frame, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
 
@@ -126,37 +152,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
-
-    BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_green_one:
-                    Intent myIntent1 = new Intent(MainActivity.this, Greenhouse1Activity.class);
-                    startActivity(myIntent1);
-                    return true;
-                case R.id.nav_green_two:
-                    Intent myIntent = new Intent(MainActivity.this, Greenhouse2Activity.class);
-                    startActivity(myIntent);
-                    return true;
-                case R.id.info:
-                    Intent myIntent3 = new Intent(MainActivity.this, PlantInfoActivity.class);
-                    startActivity(myIntent3);
-                    return true;
-                case R.id.notes:
-                    Intent myIntent4 = new Intent(MainActivity.this, NotesActivity.class);
-                    startActivity(myIntent4);
-                    return true;
-            }
-
-            return  false;
-        }
-    };
-
-
 }
-

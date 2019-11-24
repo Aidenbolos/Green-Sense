@@ -12,11 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -109,15 +107,8 @@ public class NotesActivity extends AppCompatActivity {
                 Intent it=new Intent(NotesActivity.this, NoteEditorActivity.class);
                 startActivity(it);
                 return  true;
-
-
         }
         return super.onOptionsItemSelected ( item );
     }
-
-
-
-
-
 }
 
