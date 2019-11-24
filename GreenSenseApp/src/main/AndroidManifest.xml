@@ -3,6 +3,8 @@
     package="rad.technologies.greensense">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -24,7 +26,6 @@
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
         <activity android:name=".PlantInfoActivity" />
-        <activity android:name=".NotesActivity" />
         <activity android:name=".ui.contact.ContactFragment" />
         <activity android:name=".GuestActivity" />
         <activity android:name=".Login">
@@ -35,24 +36,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".Greenhouse1Activity"
-            android:parentActivityName=".MainActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".Greenhouse2Activity"
-            android:parentActivityName=".MainActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
         <activity
             android:name=".TempAndHumidityActivity"
             android:parentActivityName=".MainActivity">
