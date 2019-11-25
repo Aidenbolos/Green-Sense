@@ -21,7 +21,7 @@ public class greenhouse2_frag extends Fragment {
         flTempAndHumidity = root.findViewById(R.id.flTempAndHumidity);
         flManualControl = root.findViewById(R.id.flManualControl);
 
-        tvTempAndHumidity = root.findViewById(R.id.tvTempAndHumidity);
+        tvTempAndHumidity = root.findViewById(R.id.fl_plant_ferns);
         tvManualControl = root.findViewById(R.id.tvManualControl);
 
 
