@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
 
         <TextView
@@ -18,7 +19,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="20dp"
-            android:text="Build Your Own"
+            android:text="@string/build_your_own"
             android:textColor="@android:color/black"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold" />
@@ -36,7 +37,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/fl_youtube"
@@ -56,7 +58,7 @@
                         android:textSize="16sp"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
-                        android:text="Youtube" />
+                        android:text="@string/youtube" />
 
 
                 </FrameLayout>
@@ -70,7 +72,7 @@
                     android:layout_margin="10dp"
                     android:paddingStart="@dimen/padding_start_end_20dp"
                     android:background="@drawable/rounded_button_white"
-                    android:paddingLeft="@dimen/padding_start_end_20dp">
+                    android:paddingEnd="@dimen/padding_start_end_20dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -81,7 +83,7 @@
                         android:textSize="16sp"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"
-                        android:text="Website" />
+                        android:text="@string/website" />
 
 
                 </FrameLayout>
@@ -91,7 +93,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/fl_parts"
@@ -112,7 +115,7 @@
                         android:textSize="16sp"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
-                        android:text="Parts" />
+                        android:text="@string/parts" />
 
 
                 </FrameLayout>
@@ -125,7 +128,7 @@
                     android:layout_weight="1"
                     android:layout_margin="10dp"
                     android:paddingStart="@dimen/padding_start_end_20dp"
-                    android:paddingLeft="@dimen/padding_start_end_20dp">
+                    android:paddingEnd="@dimen/padding_start_end_20dp">
 
                     <TextView
                         android:id="@+id/tvManualControl"
@@ -138,7 +141,7 @@
                         android:visibility="gone"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"
-                        android:text="Contact Us" />
+                        android:text="@string/contact_us" />
 
 
                 </FrameLayout>

@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".greenhouse2_frag"
+    tools:context=".greenhouse1_frag"
     android:background="@drawable/background">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
 
         <TextView
@@ -18,11 +20,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="Welcome to Greenhouse 2"
+            android:text="@string/welcome_to_greenhouse_2"
             android:textColor="@android:color/black"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold" />
-
 
         <RelativeLayout
             android:id="@+id/rlRemoteDevice"
@@ -39,7 +40,7 @@
                 android:id="@+id/tvGreenHouseControlSystem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GREENHOUSE CONTROL SYSTEM"
+                android:text="@string/greenhouse_control_system"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:textSize="@dimen/middle_text_size"
@@ -53,8 +54,9 @@
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:layout_below="@id/tvGreenHouseControlSystem"
-                android:layout_toLeftOf="@id/tvRemoteDevice"
-                android:src="@drawable/remote" />
+                android:layout_toStartOf="@id/tvRemoteDevice"
+                android:src="@drawable/remote"
+                android:contentDescription="@string/app_name" />
 
 
             <TextView
@@ -63,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvGreenHouseControlSystem"
                 android:layout_centerHorizontal="true"
-                android:text="REMOTE DEVICE"
+                android:text="@string/remote_device"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
                 android:textColor="@android:color/black" />
@@ -94,7 +96,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/flTempAndHumidity"
@@ -108,9 +111,9 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:src="@mipmap/temperature"
-                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
-                        android:layout_marginStart="20dp" />
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/app_name" />
 
 
                     <TextView
@@ -121,7 +124,7 @@
                         android:layout_marginBottom="30dp"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
-                        android:text="Temperature Humidity &amp;\nMoisture"
+                        android:text="@string/temperature_humidity_amp_nmoisture"
                         android:textColor="@color/green"
                         android:textSize="@dimen/small_text_size" />
 
@@ -137,16 +140,16 @@
                     android:layout_margin="10dp"
                     android:paddingStart="@dimen/padding_start_end_20dp"
                     android:background="@drawable/rounded_button_white"
-                    android:paddingLeft="@dimen/padding_start_end_20dp">
+                    android:paddingEnd="@dimen/padding_start_end_20dp">
 
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:src="@mipmap/controls"
-                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
-                        android:layout_marginStart="20dp" />
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/app_name" />
 
 
                     <TextView
@@ -159,7 +162,7 @@
                         android:textSize="@dimen/middle_text_size"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"
-                        android:text="Manual Control" />
+                        android:text="@string/manual_control" />
 
 
                 </FrameLayout>

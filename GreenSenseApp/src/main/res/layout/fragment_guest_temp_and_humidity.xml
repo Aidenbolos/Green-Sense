@@ -10,21 +10,23 @@
         android:layout_height="match_parent"
         android:background="@drawable/background"
         android:layout_marginBottom="60dp"
-        tools:context=".TempAndHumidityActivity">
+        tools:context=".TempAndHumidityActivity"
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/ivBack"
                 android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
                 android:visibility="gone"
                 android:layout_marginTop="10dp"
-                android:src="@mipmap/arrow_right_dark" />
+                android:src="@mipmap/arrow_right_dark"
+                android:contentDescription="@string/app_name" />
 
 
             <TextView
@@ -35,7 +37,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="20dp"
-                android:text="GREENHOUSE TEMP &amp; HUMIDITY"
+                android:text="@string/greenhouse_temp_amp_humidity"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold" />
@@ -56,22 +58,24 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/temperature" />
+                    android:src="@mipmap/temperature"
+                    android:contentDescription="@string/app_name" />
 
                 <TextView
                     android:id="@+id/tvTemerature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="30dp"
-                    android:layout_toRightOf="@id/ivTemp"
-                    android:text="GREENHOUSE  TEMPERATURE"
+                    android:layout_toEndOf="@id/ivTemp"
+                    android:text="@string/greenhouse_temperature"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
 
 
                 <TextView
@@ -80,9 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvTemerature"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/ivTemp"
-                    android:text="Temperature = 70C"
+                    android:layout_toEndOf="@id/ivTemp"
+                    android:text=""
                     android:textColor="@color/green" />
 
 
@@ -90,11 +93,11 @@
                     android:id="@+id/ivRefreshTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_refresh_black_24dp" />
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:contentDescription="@string/app_name" />
 
                 <SeekBar
                     android:id="@+id/sbTemp"
@@ -126,22 +129,22 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/drop" />
+                    android:src="@mipmap/drop"
+                    android:contentDescription="@string/app_name" />
 
                 <TextView
                     android:id="@+id/tvHumdity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
-                    android:layout_toRightOf="@id/ivHumdity"
-                    android:text="GREENHOUSE HUMIDITY"
+                    android:layout_toEndOf="@id/ivHumdity"
+                    android:text="@string/greenhouse_humidity"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
 
 
                 <TextView
@@ -150,9 +153,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvHumdity"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/ivHumdity"
-                    android:text="Humidity = 70%"
+                    android:layout_toEndOf="@id/ivHumdity"
+                    android:text=""
                     android:textColor="@color/green" />
 
 
@@ -160,11 +162,11 @@
                     android:id="@+id/ivRefreshHumidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_refresh_black_24dp" />
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:contentDescription="@string/app_name" />
 
 
                 <SeekBar
@@ -197,22 +199,22 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/clouds" />
+                    android:src="@mipmap/clouds"
+                    android:contentDescription="@string/app_name" />
 
                 <TextView
                     android:id="@+id/tvMoisture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
-                    android:layout_toRightOf="@id/ivMoisture"
-                    android:text="GREENHOUSE  MOISTURE"
+                    android:layout_toEndOf="@id/ivMoisture"
+                    android:text="@string/greenhouse_moisture"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
 
 
                 <TextView
@@ -221,9 +223,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvMoisture"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/ivMoisture"
-                    android:text="Moisture Level = 70rPH"
+                    android:layout_toEndOf="@id/ivMoisture"
+                    android:text=""
                     android:textColor="@color/green" />
 
 
@@ -231,11 +232,11 @@
                     android:id="@+id/ivRefreshMoistureLevel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_refresh_black_24dp" />
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:contentDescription="@string/app_name" />
 
 
                 <SeekBar
@@ -264,7 +265,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
 
                     <FrameLayout
                         android:id="@+id/fl_plant_cactus"
@@ -280,7 +282,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center_horizontal"
-                            android:text="Cactus"
+                            android:text="@string/cactusTxt"
                             android:textColor="@color/green"
                             android:textSize="16sp" />
 
@@ -296,14 +298,14 @@
                         android:layout_weight="1"
                         android:background="@drawable/rounded_button_white"
                         android:paddingStart="@dimen/padding_start_end_20dp"
-                        android:paddingLeft="@dimen/padding_start_end_20dp">
+                        android:paddingEnd="@dimen/padding_start_end_20dp">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center_horizontal"
-                            android:text="Herbs"
+                            android:text="@string/herbsTxt"
                             android:textColor="@color/green"
                             android:textSize="16sp" />
 
@@ -316,7 +318,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
 
                     <FrameLayout
                         android:id="@+id/fl_plant_ferns"
@@ -332,7 +335,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center_horizontal"
-                            android:text="Ferns"
+                            android:text="@string/fernsTxt"
                             android:textColor="@color/green"
                             android:textSize="16sp" />
 
@@ -348,15 +351,15 @@
                         android:layout_weight="1"
                         android:background="@drawable/rounded_button_white"
                         android:paddingStart="@dimen/padding_start_end_20dp"
-                        android:paddingLeft="@dimen/padding_start_end_20dp">
+                        android:paddingEnd="@dimen/padding_start_end_20dp">
 
                         <TextView
-
+                            android:id="@+id/tvManualControl"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center_horizontal"
-                            android:text="Confiers"
+                            android:text="@string/conifersTxt"
                             android:textColor="@color/green"
                             android:textSize="16sp" />
 

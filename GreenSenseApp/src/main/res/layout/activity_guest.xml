@@ -21,7 +21,7 @@ tools:context=".MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Welcome Guest"
+        android:text="@string/welcome_guest"
         android:textSize="10pt"
         android:textStyle="bold" />
     <FrameLayout

@@ -38,7 +38,8 @@
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/password"
@@ -48,7 +49,8 @@
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <!-- Login Button -->
 
@@ -67,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
             android:background="@drawable/rounded_button"
-            android:text="Continue as Guest"
+            android:text="@string/continue_as_guest"
             android:textColor="@android:color/black" />
 
         <!-- Link to Login Screen -->

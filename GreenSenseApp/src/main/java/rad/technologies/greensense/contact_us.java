@@ -21,8 +21,7 @@ public class contact_us extends Fragment implements View.OnClickListener {
     Button btnContact;
     private View root;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_contact_us, container, false);
         initClick();
         return root;

@@ -40,7 +40,7 @@ public class guest_temp_and_humidity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.fragment_temp_humidity, container, false);
+        root = inflater.inflate(R.layout.fragment_guest_temp_and_humidity, container, false);
 
         sbTemp = root.findViewById(R.id.sbTemp);
         sbHumidity = root.findViewById(R.id.sbHumidity);

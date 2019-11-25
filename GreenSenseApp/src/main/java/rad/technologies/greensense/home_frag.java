@@ -49,73 +49,62 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class home_frag extends Fragment {
 
     private ViewFlipper viewFlipper;
     private boolean isSlideshowOn;
-    private int FLIP_DURATION = 3500;
 
-    static String CITY;
-    String API = "c3d526c9c98e4e7df5e0996720673562";
-    int PERMISSION_ID = 44;
-    FusedLocationProviderClient mFusedLocationClient;
+    private static String CITY;
+    private int PERMISSION_ID = 44;
+    private FusedLocationProviderClient mFusedLocationClient;
 
-    TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
+    private TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
 
     private boolean checkPermissions(){
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            return true;
-        }
-        return false;
+        return ActivityCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
     private void requestPermissions(){
         ActivityCompat.requestPermissions(
-                getActivity(),
+                Objects.requireNonNull(getActivity()),
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
                 PERMISSION_ID
         );
     }
 
     private boolean isLocationEnabled(){
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        LocationManager locationManager = (LocationManager) Objects.requireNonNull(getActivity()).getSystemService(Context.LOCATION_SERVICE);
+        assert locationManager != null;
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
                 LocationManager.NETWORK_PROVIDER
         );
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_ID) {
-            if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                // Granted. Start getting the location information
-            }
-        }
+        // Granted. Start getting the location information
     }
     @SuppressLint({"MissingPermission", "WrongConstant"})
     private void getLastLocation(){
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 mFusedLocationClient.getLastLocation().addOnCompleteListener(
-                        new OnCompleteListener<Location>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Location> task) {
-                                Location location = task.getResult();
-                                if (location == null) {
-                                    requestNewLocationData();
-                                } else {
-                                    try {
-                                        Geocoder geocoder = new Geocoder(getActivity());
-                                        List<Address> addresses = null;
-                                        addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                                        String country = addresses.get(0).getCountryCode();
-                                        String cityL = addresses.get(0).getLocality();
-                                        String City = cityL +", "+country;
-                                        home_frag.CITY=City;
-                                    }catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
+                        task -> {
+                            Location location = task.getResult();
+                            if (location == null) {
+                                requestNewLocationData();
+                            } else {
+                                try {
+                                    Geocoder geocoder = new Geocoder(getActivity());
+                                    List<Address> addresses;
+                                    addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                                    String country = addresses.get(0).getCountryCode();
+                                    String cityL = addresses.get(0).getLocality();
+                                    home_frag.CITY= cityL +", "+country;
+                                }catch (IOException e) {
+                                    e.printStackTrace();
                                 }
                             }
                         }
@@ -138,7 +127,7 @@ public class home_frag extends Fragment {
         mLocationRequest.setFastestInterval(0);
         mLocationRequest.setNumUpdates(1);
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(Objects.requireNonNull(getActivity()));
         mFusedLocationClient.requestLocationUpdates(
                 mLocationRequest, mLocationCallback,
                 Looper.myLooper()
@@ -152,10 +141,11 @@ public class home_frag extends Fragment {
         }
     };
 
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    @SuppressLint("SetTextI18n")
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_frag, container, false);
 
-        Toolbar myToolbar = getActivity().findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.my_toolbar);
 
         //Pickup user email from shared preferences
         SharedPreferences sharedPref = getActivity().getSharedPreferences("myPrefs", 0);
@@ -169,7 +159,7 @@ public class home_frag extends Fragment {
 
         //Set title to organization name
         TextView title = view.findViewById(R.id.textView);
-        title.setText("Welcome to " + org + "'s Greenhouse");
+        title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
 
         //Set slideshow to organization logo
         ImageView orgImage = view.findViewById(R.id.image_one);
@@ -189,11 +179,11 @@ public class home_frag extends Fragment {
             default:
         }
 
-        viewFlipper = view.findViewById(R.id.image_view_flipper);
-        viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
-        viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
+        // viewFlipper = view.findViewById(R.id.image_view_flipper);
+        // viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
+        // viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
 
-        startSlideshow();
+       // startSlideshow();
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
         getLastLocation();
@@ -212,11 +202,6 @@ public class home_frag extends Fragment {
         return view;
     }
 
-    @Override public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-    }
-
     public void onPause(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         stopSlideshow();
@@ -226,6 +211,7 @@ public class home_frag extends Fragment {
     private void startSlideshow() {
         if (!viewFlipper.isFlipping()) {
             viewFlipper.isAutoStart();
+            int FLIP_DURATION = 3500;
             viewFlipper.setFlipInterval(FLIP_DURATION);
             viewFlipper.startFlipping();
         }
@@ -237,11 +223,12 @@ public class home_frag extends Fragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     class weatherTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... args) {
-            String response = HttpRequest.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=metric&appid=" + API);
-            return response;
+            String API = "c3d526c9c98e4e7df5e0996720673562";
+            return HttpRequest.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=metric&appid=" + API);
         }
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
