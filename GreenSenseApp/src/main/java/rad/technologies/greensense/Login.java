@@ -2,6 +2,7 @@ package rad.technologies.greensense;
 //R.A.D. Technologies
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -81,6 +82,12 @@ public class Login extends AppCompatActivity {
                                         Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
+                                    //Commit user email to shared preferences
+                                    SharedPreferences sharedPref = Login.this.getSharedPreferences("myPrefs", 0);
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("email", email);
+                                    editor.commit();
+
                                     Intent intent = new Intent(Login.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
