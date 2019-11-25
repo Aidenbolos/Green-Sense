@@ -16,18 +16,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Welcome to Humber's Greenhouses"
+            android:layout_marginTop="20dp"
+            android:text="Greenhouse"
             android:textColor="@android:color/black"
             android:textSize="10pt"
             android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <ViewFlipper
+            android:id="@+id/image_view_flipper"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:contentDescription="Humber Greenhouse"
-            android:src="@drawable/humber_plants" />
+            android:layout_marginTop="25dp">
+            <ImageView
+                android:id="@+id/image_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/humber_plants" />
+            <ImageView
+                android:id="@+id/image_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/plants" />
+            <ImageView
+                android:id="@+id/image_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/greenhouse_building" />
+            <ImageView
+                android:id="@+id/image_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/greenhouse_plants" />
+        </ViewFlipper>
 
         <TextView
             android:id="@+id/textView2"
@@ -36,6 +68,7 @@
             android:layout_gravity="center"
             android:text="Current Local Weather"
             android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
             android:textSize="10pt"
             android:textStyle="bold" />
 
