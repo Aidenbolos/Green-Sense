@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //loading the default fragment
         loadFragment(new home_frag());
@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
