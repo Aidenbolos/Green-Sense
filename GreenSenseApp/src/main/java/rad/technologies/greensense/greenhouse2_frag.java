@@ -1,6 +1,7 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,9 +15,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class greenhouse2_frag extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_greenhouse2_frag, null);
+        @SuppressLint("InflateParams") ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_greenhouse2_frag, null);
 
         flTempAndHumidity = root.findViewById(R.id.flTempAndHumidity);
         flManualControl = root.findViewById(R.id.flManualControl);
@@ -32,11 +35,11 @@ public class greenhouse2_frag extends Fragment {
 
     }
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    FrameLayout flTempAndHumidity, flManualControl;
-    TextView tvTempAndHumidity, tvManualControl;
+    private FrameLayout flTempAndHumidity, flManualControl;
+    private TextView tvTempAndHumidity, tvManualControl;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
 
-    public void onClick(View v) {
+    private void onClick(View v) {
 
         WhiteBackgroundFunction(flTempAndHumidity, tvTempAndHumidity);
         WhiteBackgroundFunction(flManualControl, tvManualControl);
@@ -61,9 +64,9 @@ public class greenhouse2_frag extends Fragment {
     private void WhiteBackgroundFunction(FrameLayout frameLayout, TextView textView) {
         final int sdk = android.os.Build.VERSION.SDK_INT;
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            frameLayout.setBackgroundDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.rounded_button_white));
+            frameLayout.setBackgroundDrawable(ContextCompat.getDrawable(Objects.requireNonNull(getActivity()), R.drawable.rounded_button_white));
         } else {
-            frameLayout.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.rounded_button_white));
+            frameLayout.setBackground(ContextCompat.getDrawable(Objects.requireNonNull(getActivity()), R.drawable.rounded_button_white));
         }
 
         textView.setTextColor(getResources().getColor(R.color.green));
@@ -74,9 +77,9 @@ public class greenhouse2_frag extends Fragment {
 
         final int sdk = android.os.Build.VERSION.SDK_INT;
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            frameLayout.setBackgroundDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.rounded_button_green));
+            frameLayout.setBackgroundDrawable(ContextCompat.getDrawable(Objects.requireNonNull(getActivity()), R.drawable.rounded_button_green));
         } else {
-            frameLayout.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.rounded_button_green));
+            frameLayout.setBackground(ContextCompat.getDrawable(Objects.requireNonNull(getActivity()), R.drawable.rounded_button_green));
         }
         textView.setTextColor(getResources().getColor(R.color.white));
 

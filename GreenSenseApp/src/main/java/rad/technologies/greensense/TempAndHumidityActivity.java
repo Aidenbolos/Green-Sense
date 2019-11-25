@@ -1,12 +1,13 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,14 +15,10 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import java.util.Random;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,30 +27,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Objects;
 
 public class TempAndHumidityActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private FirebaseAuth auth;
     private static final int pic_id = 123;
 
     //sign out method
     public void signOut() {
-        auth = FirebaseAuth.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signOut();
         // this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    Intent intent = new Intent(TempAndHumidityActivity.this, Login.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
     }
 
     //add Firebase Database stuff
@@ -77,9 +61,9 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp_and_humidity);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         sbTemp = findViewById(R.id.sbTemp);
         sbHumidity = findViewById(R.id.sbHumidity);
@@ -161,65 +145,59 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
         return true;
     }
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomTempValue() {
 
         db.collection("Readings").document("Values").collection("Data")
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvGreenHouseTemp.setText(getString(R.string.tempEq) + document.get("Temp") + getString(R.string.cels));
-                                int temp = ((Long) document.get("Temp")).intValue();
-                                sbTemp.setProgress(temp);
-                            }
-                        } else {
-                            tvGreenHouseTemp.setText(getString(R.string.docErr) + task.getException());
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            tvGreenHouseTemp.setText(getString(R.string.tempEq) + document.get("Temp") + getString(R.string.cels));
+                            int temp = ((Long) Objects.requireNonNull(document.get("Temp"))).intValue();
+                            sbTemp.setProgress(temp);
                         }
+                    } else {
+                        tvGreenHouseTemp.setText(getString(R.string.docErr) + task.getException());
                     }
                 });
     }
 
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomHumidityValue() {
 
         db.collection("Readings").document("Values").collection("Data")
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvGreenHouseHumidity.setText(getString(R.string.humEq)+ document.get("Humidity") + getString(R.string.humVal));
-                                int hum = ((Long) document.get("Humidity")).intValue();
-                                sbHumidity.setProgress(hum);
-                            }
-                        } else {
-                            tvGreenHouseHumidity.setText(getString(R.string.docErr) + task.getException());
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            tvGreenHouseHumidity.setText(getString(R.string.humEq)+ document.get("Humidity") + getString(R.string.humVal));
+                            int hum = ((Long) Objects.requireNonNull(document.get("Humidity"))).intValue();
+                            sbHumidity.setProgress(hum);
                         }
+                    } else {
+                        tvGreenHouseHumidity.setText(getString(R.string.docErr) + task.getException());
                     }
                 });
     }
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetMoistureLevelValue() {
         db.collection("Readings").document("Values").collection("Data")
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvMoistureLevel.setText(getString(R.string.soilmoisEq) + document.get("Soil") + getString(R.string.moisVal));
-                                int soil = ((Long) document.get("Soil")).intValue();
-                                spMoistureLevel.setProgress(soil);
-                            }
-                        } else {
-                            tvMoistureLevel.setText(getString(R.string.docErr)+ task.getException());
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            tvMoistureLevel.setText(getString(R.string.soilmoisEq) + document.get("Soil") + getString(R.string.moisVal));
+                            int soil = ((Long) Objects.requireNonNull(document.get("Soil"))).intValue();
+                            spMoistureLevel.setProgress(soil);
                         }
+                    } else {
+                        tvMoistureLevel.setText(getString(R.string.docErr)+ task.getException());
                     }
                 });
     }

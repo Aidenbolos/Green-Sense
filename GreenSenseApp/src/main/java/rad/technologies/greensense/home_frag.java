@@ -13,13 +13,11 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
 import android.os.Looper;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -27,55 +25,47 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.androdocs.httprequest.HttpRequest;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class home_frag extends Fragment {
 
-    static String CITY;
-    String API = "c3d526c9c98e4e7df5e0996720673562";
-    int PERMISSION_ID = 44;
-    FusedLocationProviderClient mFusedLocationClient;
+    private static String CITY;
+    private int PERMISSION_ID = 44;
+    private FusedLocationProviderClient mFusedLocationClient;
 
-    TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
+    private TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
 
     private boolean checkPermissions(){
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            return true;
-        }
-        return false;
+        return ActivityCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
     private void requestPermissions(){
         ActivityCompat.requestPermissions(
-                getActivity(),
+                Objects.requireNonNull(getActivity()),
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
                 PERMISSION_ID
         );
     }
 
     private boolean isLocationEnabled(){
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        LocationManager locationManager = (LocationManager) Objects.requireNonNull(getActivity()).getSystemService(Context.LOCATION_SERVICE);
+        assert locationManager != null;
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
                 LocationManager.NETWORK_PROVIDER
         );
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_ID) {
             if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
@@ -88,24 +78,20 @@ public class home_frag extends Fragment {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 mFusedLocationClient.getLastLocation().addOnCompleteListener(
-                        new OnCompleteListener<Location>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Location> task) {
-                                Location location = task.getResult();
-                                if (location == null) {
-                                    requestNewLocationData();
-                                } else {
-                                    try {
-                                        Geocoder geocoder = new Geocoder(getActivity());
-                                        List<Address> addresses = null;
-                                        addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                                        String country = addresses.get(0).getCountryCode();
-                                        String cityL = addresses.get(0).getLocality();
-                                        String City = cityL +", "+country;
-                                        home_frag.CITY=City;
-                                    }catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
+                        task -> {
+                            Location location = task.getResult();
+                            if (location == null) {
+                                requestNewLocationData();
+                            } else {
+                                try {
+                                    Geocoder geocoder = new Geocoder(getActivity());
+                                    List<Address> addresses;
+                                    addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                                    String country = addresses.get(0).getCountryCode();
+                                    String cityL = addresses.get(0).getLocality();
+                                    home_frag.CITY= cityL +", "+country;
+                                }catch (IOException e) {
+                                    e.printStackTrace();
                                 }
                             }
                         }
@@ -128,7 +114,7 @@ public class home_frag extends Fragment {
         mLocationRequest.setFastestInterval(0);
         mLocationRequest.setNumUpdates(1);
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(Objects.requireNonNull(getActivity()));
         mFusedLocationClient.requestLocationUpdates(
                 mLocationRequest, mLocationCallback,
                 Looper.myLooper()
@@ -144,7 +130,7 @@ public class home_frag extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_frag, container, false);
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(Objects.requireNonNull(getActivity()));
         getLastLocation();
         new weatherTask().execute();
 
@@ -161,11 +147,12 @@ public class home_frag extends Fragment {
         return view;
     }
 
+    @SuppressLint("StaticFieldLeak")
     class weatherTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... args) {
-            String response = HttpRequest.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=metric&appid=" + API);
-            return response;
+            String API = "c3d526c9c98e4e7df5e0996720673562";
+            return HttpRequest.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=metric&appid=" + API);
         }
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override

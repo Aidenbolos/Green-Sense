@@ -1,6 +1,7 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,69 +14,55 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 
 public class PlantInfoActivity extends AppCompatActivity implements View.OnTouchListener {
 
-    private FirebaseAuth auth;
     private static final int pic_id = 123;
 
     //sign out method
     public void signOut() {
-        auth = FirebaseAuth.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signOut();
         // this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    Intent intent = new Intent(PlantInfoActivity.this, Login.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
     }
 
     private TextView plantDes;
-    private FrameLayout cactus;
-    private FrameLayout herbs;
-    private FrameLayout ferns;
-    private FrameLayout conifers;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_info);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         Intent intent = getIntent();
         plantDes = findViewById(R.id.plantDesc);
-        cactus = (FrameLayout) findViewById(R.id.fl_plant_cactus);
-        herbs = (FrameLayout) findViewById(R.id.fl_plant_herbs);
-        ferns = (FrameLayout) findViewById(R.id.fl_plant_ferns);
-        conifers = (FrameLayout) findViewById(R.id.fl_plant_confiers);
+        FrameLayout cactus = findViewById(R.id.fl_plant_cactus);
+        FrameLayout herbs = findViewById(R.id.fl_plant_herbs);
+        FrameLayout ferns = findViewById(R.id.fl_plant_ferns);
+        FrameLayout conifers = findViewById(R.id.fl_plant_confiers);
 
         String name = intent.getStringExtra("Plant");
 
-        if (name.equals("cactus")) {
-            plantDes.setText(R.string.cactus);
-        } else if (name.equals("ferns")) {
-            plantDes.setText((R.string.ferns));
-        } else if (name.equals("herbs")) {
-            plantDes.setText(R.string.herbs);
-        } else if (name.equals("conifers")) {
-            plantDes.setText(R.string.conifers);
+        assert name != null;
+        switch (name) {
+            case "cactus":
+                plantDes.setText(R.string.cactus);
+                break;
+            case "ferns":
+                plantDes.setText((R.string.ferns));
+                break;
+            case "herbs":
+                plantDes.setText(R.string.herbs);
+                break;
+            case "conifers":
+                plantDes.setText(R.string.conifers);
+                break;
         }
         cactus.setOnTouchListener(this);
         herbs.setOnTouchListener(this);
@@ -83,6 +70,7 @@ public class PlantInfoActivity extends AppCompatActivity implements View.OnTouch
         conifers.setOnTouchListener(this);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         switch (v.getId()) {
