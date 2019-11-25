@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/Home" />
+    <item
+        android:id="@+id/nav_green_one"
+        android:icon="@drawable/ic_ghouse_24dp"
+        android:title="@string/Green_House_test" />
+
+    <item
+        android:id="@+id/ByO"
+        android:icon="@drawable/ic_build_black_24dp"
+        android:title="@string/ByO" />
+
+    <item
+        android:id="@+id/contact"
+        android:icon="@drawable/ic_contact_mail_black_24dp"
+        android:title="@string/contactUs" />
+
+</menu>

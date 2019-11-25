@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".build_frag">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvGreenSense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:text="Build Your Own"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvGreenSense"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/fl_youtube"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_bg_white">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="16sp"
+                        android:paddingStart="@dimen/padding_start_end_20dp"
+                        android:paddingEnd="@dimen/padding_start_end_20dp"
+                        android:text="Youtube" />
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/fl_website"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:paddingStart="@dimen/padding_start_end_20dp"
+                    android:background="@drawable/rounded_button_white"
+                    android:paddingLeft="@dimen/padding_start_end_20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="16sp"
+                        android:paddingStart="@dimen/padding_start_end_15dp"
+                        android:paddingEnd="@dimen/padding_start_end_15dp"
+                        android:text="Website" />
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/fl_parts"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_bg_white">
+
+
+                    <TextView
+                        android:id="@+id/tvTempAndHumidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="16sp"
+                        android:paddingStart="@dimen/padding_start_end_20dp"
+                        android:paddingEnd="@dimen/padding_start_end_20dp"
+                        android:text="Parts" />
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/fl_contact_us"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:paddingStart="@dimen/padding_start_end_20dp"
+                    android:paddingLeft="@dimen/padding_start_end_20dp">
+
+                    <TextView
+                        android:id="@+id/tvManualControl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:paddingStart="@dimen/padding_start_end_15dp"
+                        android:paddingEnd="@dimen/padding_start_end_15dp"
+                        android:text="Contact Us" />
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

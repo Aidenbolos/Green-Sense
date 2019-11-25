@@ -16,7 +16,7 @@ public class BottomNavigationActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        getSupportActionBar().setTitle("Green Sense");
+        getSupportActionBar().setTitle(R.string.app_name);
     }
 }
 

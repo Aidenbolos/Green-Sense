@@ -3,6 +3,7 @@ package rad.technologies.greensense;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -19,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import rad.technologies.greensense.ui.contact.ContactFragment;
 
-public class GuestActivity extends AppCompatActivity {
+public class GuestActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth auth;
     private static final int pic_id = 123;
@@ -49,20 +50,55 @@ public class GuestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest);
 
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        // Locate the button in activity_main.xml
+        //loading the default fragment
+        loadFragment(new home_frag());
 
-
-        BottomNavigationView navView  = (BottomNavigationView) findViewById(R.id.nav_view);
-
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //getting bottom navigation view and attaching the listener
+        BottomNavigationView navigation = findViewById(R.id.nav_view);
+        navigation.setOnNavigationItemSelectedListener(this);
 
     }
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                fragment = new home_frag();
+                break;
+
+            case R.id.nav_green_one:
+                fragment = new guest_temp_and_humidity();
+                break;
+
+            case R.id.ByO:
+                fragment = new build_frag();
+                break;
+
+            case R.id.contact:
+                fragment = new contact_us();
+                break;
+        }
+
+        return loadFragment(fragment);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_frame, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,36 +154,4 @@ public class GuestActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
-    BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_green_one:
-                    Intent myIntent1 = new Intent(GuestActivity.this, greenhouse1_frag.class);
-                    startActivity(myIntent1);
-                    return true;
-                case R.id.nav_green_two:
-                    Intent myIntent = new Intent(GuestActivity.this, greenhouse2_frag.class);
-                    startActivity(myIntent);
-                    return true;
-                case R.id.info:
-                    Intent myIntent3 = new Intent(GuestActivity.this, PlantInfoActivity.class);
-                    startActivity(myIntent3);
-                    return true;
-                case R.id.notes:
-                    Intent myIntent4 = new Intent(GuestActivity.this, notes_frag.class);
-                    startActivity(myIntent4);
-                    return true;
-            }
-
-            return  false;
-        }
-    };
-
-
 }
-
