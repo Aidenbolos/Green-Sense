@@ -83,7 +83,7 @@ public class home_frag extends Fragment {
             }
         }
     }
-    @SuppressLint("MissingPermission")
+    @SuppressLint({"MissingPermission", "WrongConstant"})
     private void getLastLocation(){
         if (checkPermissions()) {
             if (isLocationEnabled()) {
@@ -111,7 +111,7 @@ public class home_frag extends Fragment {
                         }
                 );
             } else {
-                Toast.makeText(getActivity(), "Turn on location", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), Toast.LENGTH_LONG, R.string.locationOn).show();
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(intent);
             }
@@ -189,11 +189,11 @@ public class home_frag extends Fragment {
                 addressTxt.setText(address);
                 statusTxt.setText(weatherDescription.toUpperCase());
                 tempTxt.setText(temp);
-                windTxt.setText(windSpeed+"m/s");
-                pressureTxt.setText(" "+pressure+"hpa");
-                humidityTxt.setText(humidity+"%");
+                windTxt.setText(String.format("%s%s", windSpeed, getString(R.string.windMes)));
+                pressureTxt.setText(String.format(" %s%s", pressure, getString(R.string.presMes)));
+                humidityTxt.setText(String.format("%s%%", humidity));
             } catch (JSONException e) {
-                errorTxt.setText("Error Retrieving Data; Location Not Available");
+                errorTxt.setText(R.string.dataErr);
                 e.printStackTrace();
             }
         }

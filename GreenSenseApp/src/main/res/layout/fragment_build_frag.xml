@@ -103,7 +103,7 @@
 
 
                     <TextView
-                        android:id="@+id/tvTempAndHumidity"
+                        android:id="@+id/fl_plant_ferns"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/green"

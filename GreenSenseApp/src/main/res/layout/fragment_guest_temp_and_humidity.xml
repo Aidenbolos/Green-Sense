@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".guest_temp_and_humidity">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
@@ -329,7 +328,6 @@
 
 
                         <TextView
-                            android:id="@+id/tvTempAndHumidity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -353,7 +351,7 @@
                         android:paddingLeft="@dimen/padding_start_end_20dp">
 
                         <TextView
-                            android:id="@+id/tvManualControl"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

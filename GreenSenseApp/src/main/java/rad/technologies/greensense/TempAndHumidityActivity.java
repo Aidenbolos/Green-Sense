@@ -122,7 +122,7 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(camera_intent, pic_id);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, camera not working :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
@@ -131,16 +131,16 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
                     startActivity(browserHelp);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, can't help :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,  R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
             // action with ID action_settings was selected
             case R.id.action_settings:
                 try {
-                    Toast.makeText(this, "Settings coming soon",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.comingSoon, Toast.LENGTH_SHORT).show();
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, settings not working :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
@@ -151,7 +151,7 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     startActivity(intent);
                     finish();
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Unable to sign out :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
@@ -171,12 +171,12 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvGreenHouseTemp.setText("Temperature = " + document.get("Temp") + "C");
+                                tvGreenHouseTemp.setText(getString(R.string.tempEq) + document.get("Temp") + getString(R.string.cels));
                                 int temp = ((Long) document.get("Temp")).intValue();
                                 sbTemp.setProgress(temp);
                             }
                         } else {
-                            tvGreenHouseTemp.setText("Error getting documents." + task.getException());
+                            tvGreenHouseTemp.setText(getString(R.string.docErr) + task.getException());
                         }
                     }
                 });
@@ -193,12 +193,12 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvGreenHouseHumidity.setText("Humidity = " + document.get("Humidity") + "RM(%)");
+                                tvGreenHouseHumidity.setText(getString(R.string.humEq)+ document.get("Humidity") + getString(R.string.humVal));
                                 int hum = ((Long) document.get("Humidity")).intValue();
                                 sbHumidity.setProgress(hum);
                             }
                         } else {
-                            tvGreenHouseHumidity.setText("Error getting documents." + task.getException());
+                            tvGreenHouseHumidity.setText(getString(R.string.docErr) + task.getException());
                         }
                     }
                 });
@@ -213,12 +213,12 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvMoistureLevel.setText("Soil Moisture = " + document.get("Soil") + "rPH");
+                                tvMoistureLevel.setText(getString(R.string.soilmoisEq) + document.get("Soil") + getString(R.string.moisVal));
                                 int soil = ((Long) document.get("Soil")).intValue();
                                 spMoistureLevel.setProgress(soil);
                             }
                         } else {
-                            tvMoistureLevel.setText("Error getting documents." + task.getException());
+                            tvMoistureLevel.setText(getString(R.string.docErr)+ task.getException());
                         }
                     }
                 });

@@ -1,10 +1,10 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,12 +13,9 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import rad.technologies.greensense.ui.contact.ContactFragment;
 
 public class GuestActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -116,7 +113,7 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
                     Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(camera_intent, pic_id);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, camera not working :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
@@ -125,16 +122,16 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
                     startActivity(browserHelp);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, can't help :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,  R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
             // action with ID action_settings was selected
             case R.id.action_settings:
                 try {
-                    Toast.makeText(this, "Settings coming soon",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.comingSoon, Toast.LENGTH_SHORT).show();
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Sorry, settings not working :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
@@ -145,7 +142,7 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
                     startActivity(intent);
                     finish();
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, "Unable to sign out :(",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;
