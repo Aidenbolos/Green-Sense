@@ -8,6 +8,8 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -26,7 +28,6 @@
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
         <activity android:name=".PlantInfoActivity" />
-        <activity android:name=".ui.contact.ContactFragment" />
         <activity android:name=".GuestActivity" />
         <activity android:name=".Login">
             <intent-filter>

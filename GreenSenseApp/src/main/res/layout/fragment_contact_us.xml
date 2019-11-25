@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         android:layout_marginBottom="50dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/ll_name"
@@ -22,18 +23,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name" />
+                android:text="@string/name" />
 
             <EditText
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
-                android:hint="Austin Tate"
+                android:hint="@string/name_ex"
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorPrimary"
+                android:importantForAutofill="no"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,20 +50,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email" />
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
-                android:hint="austin@gmail.com"
+                android:hint="@string/email_ex"
 
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorPrimary"
+                android:importantForAutofill="no" />
         </LinearLayout>
 
 
@@ -76,16 +80,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Describe" />
+                android:text="@string/describe" />
 
             <EditText
                 android:id="@+id/et_description"
-                android:layout_width="367dp"
-                android:layout_height="132dp"
+                android:layout_width="379dp"
+                android:layout_height="137dp"
                 android:backgroundTint="@color/white"
                 android:gravity="start"
-                android:hint="I need help in..."
+                android:hint="@string/i_need_help_in"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingTop="10dp" />
         </LinearLayout>
@@ -100,7 +105,7 @@
             android:layout_below="@id/ll_description"
             android:background="@color/colorPrimary"
             android:padding="10dp"
-            android:text="Send"
+            android:text="@string/send"
             android:textAllCaps="false"
             android:textColor="@color/white" />
     </RelativeLayout>

@@ -22,44 +22,16 @@
             android:textSize="10pt"
             android:textStyle="bold" />
 
-        <ViewFlipper
-            android:id="@+id/image_view_flipper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
-            <ImageView
-                android:id="@+id/image_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/humber_plants" />
-            <ImageView
-                android:id="@+id/image_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/plants" />
-            <ImageView
-                android:id="@+id/image_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/greenhouse_building" />
-            <ImageView
-                android:id="@+id/image_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/greenhouse_plants" />
-        </ViewFlipper>
+
+        <ImageView
+            android:id="@+id/image_one"
+            android:layout_width="298dp"
+            android:layout_height="167dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/humber_plants" />
+
 
         <TextView
             android:id="@+id/textView2"

@@ -20,13 +20,15 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
         android:background="#CCFFFFFF"
         android:gravity="top"
-        android:hint="Type Here"
+        android:hint="@string/type_here"
         android:textColorHint="#83CC23"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:autofillHints=""
+        android:inputType="text"
+        tools:targetApi="o"/>
 </LinearLayout>
