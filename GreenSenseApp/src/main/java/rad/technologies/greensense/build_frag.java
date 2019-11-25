@@ -4,14 +4,12 @@ package rad.technologies.greensense;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -23,7 +21,7 @@ public class build_frag extends Fragment implements View.OnClickListener {
     FrameLayout website;
     @BindView(R.id.fl_parts)
     FrameLayout parts;
-    View root;
+    private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

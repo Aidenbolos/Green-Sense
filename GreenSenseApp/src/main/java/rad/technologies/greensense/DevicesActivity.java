@@ -1,11 +1,9 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
-import androidx.annotation.NonNull;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,19 +13,13 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import rad.technologies.greensense.R;
-
 import java.util.Objects;
 
 public class DevicesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private FirebaseAuth auth;
+    protected FirebaseAuth auth;
     private static final int pic_id = 123;
 
     //sign out method
@@ -35,31 +27,17 @@ public class DevicesActivity extends AppCompatActivity implements View.OnClickLi
         auth = FirebaseAuth.getInstance();
         auth.signOut();
         // this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    Intent intent = new Intent(DevicesActivity.this, Login.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
     }
 
-    ImageView ivBack;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_devices);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
 

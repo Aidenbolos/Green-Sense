@@ -21,13 +21,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class guest_temp_and_humidity extends Fragment {
-    SeekBar sbTemp, sbHumidity;
-    TextView tvGreenHouseTemp, tvGreenHouseHumidity;
-    ImageView ivRefreshTemp, ivRefreshHumidity;
+    private SeekBar sbTemp, sbHumidity;
+    private TextView tvGreenHouseTemp, tvGreenHouseHumidity;
 
-    TextView tvMoistureLevel;
-    ImageView ivRefreshMoistureLevel;
-    SeekBar spMoistureLevel;
+    private TextView tvMoistureLevel;
+    private SeekBar spMoistureLevel;
 
     @BindView(R.id.fl_plant_cactus)
     FrameLayout cactus;
@@ -37,7 +35,7 @@ public class guest_temp_and_humidity extends Fragment {
     FrameLayout ferns;
     @BindView(R.id.fl_plant_confiers)
     FrameLayout conifers;
-    View root;
+    private View root;
 
 
     @Override
@@ -48,10 +46,10 @@ public class guest_temp_and_humidity extends Fragment {
         sbHumidity = root.findViewById(R.id.sbHumidity);
         tvGreenHouseHumidity = root.findViewById(R.id.tvGreenHouseHumidity);
         tvGreenHouseTemp = root.findViewById(R.id.tvGreenHouseTemp);
-        ivRefreshHumidity = root.findViewById(R.id.ivRefreshHumidity);
-        ivRefreshTemp = root.findViewById(R.id.ivRefreshTemp);
+        ImageView ivRefreshHumidity = root.findViewById(R.id.ivRefreshHumidity);
+        ImageView ivRefreshTemp = root.findViewById(R.id.ivRefreshTemp);
         tvMoistureLevel = root.findViewById(R.id.tvMoistureLevel);
-        ivRefreshMoistureLevel = root.findViewById(R.id.ivRefreshMoistureLevel);
+        ImageView ivRefreshMoistureLevel = root.findViewById(R.id.ivRefreshMoistureLevel);
         spMoistureLevel = root.findViewById(R.id.spMoistureLevel);
         ivRefreshMoistureLevel.setOnClickListener(this::onClick);
         ivRefreshTemp.setOnClickListener(this::onClick);
@@ -76,30 +74,32 @@ public class guest_temp_and_humidity extends Fragment {
         ferns.setOnClickListener(this::onClick);
         conifers.setOnClickListener(this::onClick);
     }
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomTempValue() {
-        int random = new Random().nextInt((100 - 0) + 1) + 0;
+        int random = new Random().nextInt((100) + 1);
         tvGreenHouseTemp.setText(String.format("%s%d%s", getString(R.string.tempEq), random, getString(R.string.cels)));
         sbTemp.setProgress(random);
     }
 
 
+    @SuppressLint("DefaultLocale")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomHumidityValue() {
-        int random = new Random().nextInt((100 - 0) + 1) + 0;
+        int random = new Random().nextInt((100) + 1);
         tvGreenHouseHumidity.setText(String.format("%s%d%s", getString(R.string.humEq), random, getString(R.string.humVal)));
         sbHumidity.setProgress(random);
     }
 
+    @SuppressLint("DefaultLocale")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetMoistureLevelValue() {
-        int random = new Random().nextInt((100 - 0) + 1) + 0;
+        int random = new Random().nextInt((100) + 1);
         tvMoistureLevel.setText(String.format("%s%d%s", getString(R.string.soilmoisEq), random, getString(R.string.moisVal)));
         spMoistureLevel.setProgress(random);
     }
 
-    public void onClick(View v) {
+    private void onClick(View v) {
         Intent intent = new Intent(getActivity(), PlantInfoActivity.class);
         switch (v.getId()) {
             case R.id.ivRefreshTemp:

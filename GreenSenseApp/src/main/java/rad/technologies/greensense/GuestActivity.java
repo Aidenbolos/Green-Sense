@@ -19,27 +19,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class GuestActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private FirebaseAuth auth;
     private static final int pic_id = 123;
 
     //sign out method
     public void signOut() {
-        auth = FirebaseAuth.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signOut();
         // this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    Intent intent = new Intent(GuestActivity.this, Login.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
     }
 
     @Override
@@ -48,7 +34,7 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
         setContentView(R.layout.activity_guest);
 
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         //loading the default fragment
