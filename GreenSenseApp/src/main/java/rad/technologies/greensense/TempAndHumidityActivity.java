@@ -65,7 +65,7 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     ImageView ivRefreshTemp, ivRefreshHumidity;
 
     TextView tvMoistureLevel;
-    ImageView ivRefreshMoistureLevel, ivBack;
+    ImageView ivRefreshMoistureLevel;
     SeekBar spMoistureLevel;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -193,7 +193,7 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                tvGreenHouseHumidity.setText("Humidity = " + document.get("Humidity") + "RM");
+                                tvGreenHouseHumidity.setText("Humidity = " + document.get("Humidity") + "RM(%)");
                                 int hum = ((Long) document.get("Humidity")).intValue();
                                 sbHumidity.setProgress(hum);
                             }
