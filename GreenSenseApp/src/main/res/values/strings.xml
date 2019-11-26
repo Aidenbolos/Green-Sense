@@ -93,4 +93,10 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="temperature_humidity_amp_nmoisture"><![CDATA[Temperature Humidity & Moisture]]></string>
     <string name="manual_control">Manual Control</string>
     <string name="welcome_to_greenhouse_2">Welcome to Greenhouse 2</string>
+    <string name="settings">Settings</string>
+    <string name="Darkmode">Dark mode</string>
+    <string name="aboutus">About Us</string>
+    <string name="title_vibrate">Vibrate</string>
+    <string name="key_vibrate">key_vibrate</string>
+    <string name="summary_about">We are a team of like-minded people, specialized in development of Android App Development creating new trends across the app space. Glad to Help in anyway!</string>
 </resources>
