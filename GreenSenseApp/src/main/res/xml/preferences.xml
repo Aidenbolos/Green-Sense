@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <androidx.preference.PreferenceCategory android:title="General Settings">
+
+
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="switch_settings_key"
+            android:title="Enable notification" />
+
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+
+        android:key="switch_settings_key"
+        android:title="@string/Darkmode" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="@string/key_vibrate"
+        android:title="@string/title_vibrate" />
+    <androidx.preference.PreferenceCategory android:title="Other">
+
+        <androidx.preference.Preference
+            android:key="about_settings_key"
+            android:summary="@string/summary_about"
+            android:title="@string/aboutus" />
+
+
+    </androidx.preference.PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>

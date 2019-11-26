@@ -114,7 +114,7 @@ public class NoteEditorActivity extends AppCompatActivity {
             // action with ID action_settings was selected
             case R.id.action_settings:
                 try {
-                    Toast.makeText(this, R.string.comingSoon, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this,SettingsActivity.class));
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
