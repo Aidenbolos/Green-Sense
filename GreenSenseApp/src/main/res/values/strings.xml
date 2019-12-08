@@ -111,4 +111,5 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="signout">Sign Out</string>
     <string name="Help">Help</string>
     <string name="Camera">Camera</string>
+    <string name="invalEm">Invalid Email</string>
 </resources>

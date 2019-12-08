@@ -111,5 +111,5 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="signout">Déconnexion</string>
     <string name="Help">Aidez-moi</string>
     <string name="Camera">Caméra</string>
-
+    <string name="invalEm">Email Invalide</string>
 </resources>

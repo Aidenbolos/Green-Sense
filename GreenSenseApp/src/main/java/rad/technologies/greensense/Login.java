@@ -5,22 +5,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
-    private FirebaseAuth auth;
+    public static FirebaseAuth auth;
     private ProgressBar progressBar;
 
     @Override
@@ -60,6 +57,9 @@ public class Login extends AppCompatActivity {
                 return;
             }
 
+            if(!isValidEmail(email)){
+                Toast.makeText(getApplicationContext(), R.string.invalEm, Toast.LENGTH_SHORT).show();
+            }
             progressBar.setVisibility(View.VISIBLE);
 
             //authenticate user
@@ -98,6 +98,8 @@ public class Login extends AppCompatActivity {
             Intent myIntent = new Intent(Login.this, GuestActivity.class);
             startActivity(myIntent);
         });
-
+    }
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 }
