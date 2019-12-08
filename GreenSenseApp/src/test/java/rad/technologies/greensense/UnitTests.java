@@ -1,10 +1,13 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
 
+import android.content.Context;
+
 import com.androdocs.httprequest.HttpRequest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.regex.Matcher;
@@ -17,6 +20,9 @@ import static org.junit.Assert.assertTrue;
 public class UnitTests{
 
     private static final String FAKE_EMAIL = "test@email.com";
+
+    @Mock
+    Context mockContext;
 
     @Test
     public void testConvertFahrenheitToCelsius() {
