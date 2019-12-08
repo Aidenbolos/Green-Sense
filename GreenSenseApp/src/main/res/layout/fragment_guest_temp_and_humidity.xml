@@ -25,7 +25,7 @@
                 android:layout_marginEnd="10dp"
                 android:visibility="gone"
                 android:layout_marginTop="10dp"
-                android:src="@mipmap/arrow_right_dark"
+                android:src="@drawable/arrow_right_dark"
                 android:contentDescription="@string/app_name" />
 
 
@@ -60,7 +60,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/temperature"
+                    android:src="@drawable/temperature"
                     android:contentDescription="@string/app_name" />
 
                 <TextView
@@ -130,7 +130,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/drop"
+                    android:src="@drawable/drop"
                     android:contentDescription="@string/app_name" />
 
                 <TextView
@@ -200,7 +200,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="30dp"
-                    android:src="@mipmap/clouds"
+                    android:src="@drawable/clouds"
                     android:contentDescription="@string/app_name" />
 
                 <TextView

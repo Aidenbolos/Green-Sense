@@ -22,15 +22,5 @@
         android:defaultValue="true"
         android:key="@string/key_vibrate"
         android:title="@string/title_vibrate" />
-    <androidx.preference.PreferenceCategory android:title="Other">
-
-        <androidx.preference.Preference
-            android:key="about_settings_key"
-            android:summary="@string/summary_about"
-            android:title="@string/aboutus" />
-
-
-    </androidx.preference.PreferenceCategory>
-
 
 </androidx.preference.PreferenceScreen>

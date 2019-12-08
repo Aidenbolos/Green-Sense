@@ -6,7 +6,7 @@
     <item
         android:id="@+id/add_note"
         app:showAsAction="never"
-        android:title="Add notes" />
+        android:title="@string/add_notes" />
 
 
 </menu>

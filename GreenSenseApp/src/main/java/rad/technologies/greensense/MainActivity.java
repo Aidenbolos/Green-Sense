@@ -132,6 +132,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     e.printStackTrace();
                 }
                 break;
+            case R.id.action_about:
+                try {
+                    startActivity(new Intent(this,AboutUs.class));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -60,8 +60,8 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="welcome_to">Bienvenue à </string>
     <string name="plGreen">\'s Serre</string>
     <string name="greenhouse_devices">DISPOSITIFS DE SERRE</string>
-    <string name="status_of_light">STATUS DE LA LUMIÈRE</string>
-    <string name="status_of_blinds">STATUS DES STORES</string>
+    <string name="status_of_light">NIVEAUX LUMINEUX</string>
+    <string name="status_of_blinds">NIVEAUX AVEUGLES</string>
     <string name="device_1">DISPOSITIF 1</string>
     <string name="device_2">DISPOSITIF 2</string>
     <string name="device_3">DISPOSITIF 3</string>
@@ -99,6 +99,17 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="title_vibrate">Vibrer</string>
     <string name="key_vibrate">clé_Vibrer</string>
     <string name="summary_about">Nous sommes une équipe de personnes partageant les mêmes idées, spécialisées dans le développement d\'applications de développement d\'applications Android créant de nouvelles tendances dans l\'espace des applications. Heureux d\'aider de toute façon!</string>
-
+    <string name="light_north">Nord Lumières</string>
+    <string name="light_south">Sud Lumières</string>
+    <string name="light_east">Est Lumières</string>
+    <string name="light_west">Ouest Lumières</string>
+    <string name="blind_north">Nord Stores</string>
+    <string name="blind_south">Sud Stores</string>
+    <string name="blind_east">Est Stores</string>
+    <string name="blind_west">Ouest Stores</string>
+    <string name="add_notes">Ajouter des notes</string>
+    <string name="signout">Déconnexion</string>
+    <string name="Help">Aidez-moi</string>
+    <string name="Camera">Caméra</string>
 
 </resources>

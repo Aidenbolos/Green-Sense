@@ -60,8 +60,8 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="welcome_to">Welcome to </string>
     <string name="plGreen">\'s Greenhouse</string>
     <string name="greenhouse_devices">GREENHOUSE DEVICES</string>
-    <string name="status_of_light">STATUS OF LIGHT</string>
-    <string name="status_of_blinds">STATUS OF BLINDS</string>
+    <string name="status_of_light">LIGHT LEVELS</string>
+    <string name="status_of_blinds">BLIND LEVELS</string>
     <string name="device_1">DEVICE 1</string>
     <string name="device_2">DEVICE 2</string>
     <string name="device_3">DEVICE 3</string>
@@ -99,4 +99,16 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="title_vibrate">Vibrate</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="summary_about">We are a team of like-minded people, specialized in development of Android App Development creating new trends across the app space. Glad to Help in anyway!</string>
+    <string name="light_north">North Lights</string>
+    <string name="light_south">South Lights</string>
+    <string name="light_east">East Lights</string>
+    <string name="light_west">West Lights</string>
+    <string name="blind_north">North Blinds</string>
+    <string name="blind_south">South Blinds</string>
+    <string name="blind_east">East Blinds</string>
+    <string name="blind_west">West Blinds</string>
+    <string name="add_notes">Add notes</string>
+    <string name="signout">Sign Out</string>
+    <string name="Help">Help</string>
+    <string name="Camera">Camera</string>
 </resources>
