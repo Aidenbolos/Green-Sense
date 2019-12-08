@@ -60,7 +60,7 @@
                     android:checked="true"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:text="@string/device_1" />
+                    android:text="@string/light_north" />
 
 
                 <SeekBar
@@ -91,7 +91,7 @@
                     android:checked="true"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:text="@string/device_2" />
+                    android:text="@string/light_south" />
 
 
                 <SeekBar
@@ -118,7 +118,7 @@
                     android:checked="true"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:text="@string/device_3" />
+                    android:text="@string/light_east" />
 
 
                 <SeekBar
@@ -145,7 +145,7 @@
                     android:checked="true"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:text="@string/device_4" />
+                    android:text="@string/light_west" />
 
 
                 <SeekBar
@@ -196,7 +196,7 @@
                     android:checked="true"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    android:text="@string/device_1" />
+                    android:text="@string/blind_north" />
 
                 <SeekBar
                     android:layout_width="150dp"
@@ -220,7 +220,7 @@
                     android:checked="true"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    android:text="@string/device_2" />
+                    android:text="@string/blind_south" />
 
                 <SeekBar
                     android:layout_width="150dp"
@@ -244,7 +244,7 @@
                     android:checked="true"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    android:text="@string/device_3" />
+                    android:text="@string/blind_east" />
 
                 <SeekBar
                     android:layout_width="150dp"
@@ -268,7 +268,7 @@
                     android:checked="true"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    android:text="@string/device_4" />
+                    android:text="@string/blind_west" />
 
                 <SeekBar
                     android:layout_width="150dp"

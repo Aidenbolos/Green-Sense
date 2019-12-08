@@ -4,22 +4,27 @@
 
     <item
         android:id="@+id/action_picture"
-        app:showAsAction="always"
-        android:title="Camera"
+        app:showAsAction="ifRoom"
+        android:title="@string/Camera"
         android:icon="@drawable/ic_camera"/>
     <item
         android:id="@+id/action_help"
         app:showAsAction="never"
-        android:title="Help" />
+        android:title="@string/Help" />
     <item
         android:id="@+id/action_settings"
         app:showAsAction="never"
-        android:title="Settings">
+        android:title="@string/settings">
     </item>
     <item
         android:id="@+id/action_signout"
         app:showAsAction="never"
-        android:title="Sign Out">
+        android:title="@string/signout">
+    </item>
+    <item
+        android:id="@+id/action_about"
+        app:showAsAction="never"
+        android:title="@string/aboutus">
     </item>
 
 </menu>

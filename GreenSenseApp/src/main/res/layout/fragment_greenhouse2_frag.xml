@@ -110,7 +110,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@mipmap/temperature"
+                        android:src="@drawable/temperature"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
                         android:layout_marginStart="20dp"
                         android:contentDescription="@string/app_name" />
@@ -146,7 +146,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@mipmap/controls"
+                        android:src="@drawable/controls"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
                         android:layout_marginStart="20dp"
                         android:contentDescription="@string/app_name" />

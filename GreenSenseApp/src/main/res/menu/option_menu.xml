@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/camera"
-        android:title="Camera" />
+        android:title="@string/Camera" />
     <item
         android:id="@+id/website"
-        android:title="Website"
+        android:title="@string/website"
        />
     <item
         android:id="@+id/help"
-        android:title="Help" />
+        android:title="@string/Help" />
     <item
         android:id="@+id/setting"
-        android:title="Settings" />
+        android:title="@string/settings" />
     <item
         android:id="@+id/signout"
-        android:title="Sign out" />
+        android:title="@string/signout" />
 </menu>
