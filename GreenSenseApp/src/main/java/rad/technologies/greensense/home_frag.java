@@ -179,9 +179,9 @@ public class home_frag extends Fragment {
             default:
         }
 
-        // viewFlipper = view.findViewById(R.id.image_view_flipper);
-        // viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
-        // viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
+        //viewFlipper = view.findViewById(R.id.image_view_flipper);
+        //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
+        //viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
 
        // startSlideshow();
 
@@ -202,6 +202,7 @@ public class home_frag extends Fragment {
         return view;
     }
 
+    /*
     public void onPause(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         stopSlideshow();
@@ -222,6 +223,7 @@ public class home_frag extends Fragment {
             viewFlipper.stopFlipping();
         }
     }
+    */
 
     @SuppressLint("StaticFieldLeak")
     class weatherTask extends AsyncTask<String, Void, String> {
