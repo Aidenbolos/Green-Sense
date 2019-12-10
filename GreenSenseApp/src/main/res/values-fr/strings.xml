@@ -112,4 +112,10 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="Help">Aidez-moi</string>
     <string name="Camera">Caméra</string>
     <string name="invalEm">Email Invalide</string>
+    <string name="Green_Houses">Serres</string>
+    <string name="selectGreenhouse">Sélectionnez la serre que vous souhaitez voir</string>
+    <string-array name="greenhouses">
+        <item>Serre 1</item>
+        <item>Serre 2</item>
+    </string-array>
 </resources>

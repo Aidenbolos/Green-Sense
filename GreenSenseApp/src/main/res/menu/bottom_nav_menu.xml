@@ -8,12 +8,7 @@
     <item
         android:id="@+id/nav_green_one"
         android:icon="@drawable/ic_ghouse_24dp"
-        android:title="@string/Green_House_1" />
-
-    <item
-        android:id="@+id/nav_green_two"
-        android:icon="@drawable/ic_ghouse_24dp"
-        android:title="@string/Green_House_2" />
+        android:title="@string/Green_Houses" />
 
 
     <item

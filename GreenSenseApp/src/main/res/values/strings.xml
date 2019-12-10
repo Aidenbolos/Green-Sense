@@ -112,4 +112,10 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="Help">Help</string>
     <string name="Camera">Camera</string>
     <string name="invalEm">Invalid Email</string>
+    <string name="Green_Houses">Greenhouses</string>
+    <string name="selectGreenhouse">Select the Greenhouse you\'d like to view</string>
+    <string-array name="greenhouses">
+        <item>Greenhouse 1</item>
+        <item>Greenhouse 2</item>
+    </string-array>
 </resources>

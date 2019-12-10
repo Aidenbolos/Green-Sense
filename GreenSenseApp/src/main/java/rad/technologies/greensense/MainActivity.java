@@ -55,11 +55,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.nav_green_one:
-                fragment = new greenhouse1_frag();
-                break;
-
-            case R.id.nav_green_two:
-                fragment = new greenhouse2_frag();
+                fragment = new greenhouses_frag();
                 break;
 
             case R.id.notes:
