@@ -111,7 +111,7 @@ public class home_frag extends Fragment {
                         }
                 );
             } else {
-                Toast.makeText(getActivity(), Toast.LENGTH_LONG, R.string.locationOn).show();
+                Toast.makeText(getActivity(), R.string.locationOn, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(intent);
             }
@@ -256,25 +256,25 @@ public class home_frag extends Fragment {
                 /* Populating extracted data into our views */
                 statusTxt.setText(weatherDescription.toUpperCase());
 
-                if (weatherDescription.toLowerCase().indexOf("clouds") != -1){
+                if (weatherDescription.toLowerCase().contains("clouds")){
                     condition.setImageResource(R.drawable.clouds);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("wind") != -1) {
+                else if (weatherDescription.toLowerCase().contains("wind")) {
                     condition.setImageResource(R.drawable.wind);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("mist") != -1){
+                else if (weatherDescription.toLowerCase().contains("mist")){
                     condition.setImageResource(R.drawable.drop);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("rain") != -1){
+                else if (weatherDescription.toLowerCase().contains("rain")){
                     condition.setImageResource(R.drawable.drop);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("sunny") != -1){
+                else if (weatherDescription.toLowerCase().contains("sunny")){
                     condition.setImageResource(R.drawable.sun);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("snow") != -1){
+                else if (weatherDescription.toLowerCase().contains("snow")){
                     condition.setImageResource(R.drawable.snow);
                 }
-                else if (weatherDescription.toLowerCase().indexOf("storm") != -1) {
+                else if (weatherDescription.toLowerCase().contains("storm")) {
                     condition.setImageResource(R.drawable.storm);
                 }
                 else {
