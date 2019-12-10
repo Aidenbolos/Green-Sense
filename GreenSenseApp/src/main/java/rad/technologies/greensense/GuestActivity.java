@@ -39,6 +39,7 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle(getString(R.string.guestTitle));
 
         //loading the default fragment
         loadFragment(new home_frag());
@@ -149,18 +150,19 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
         return true;
     }
 
+    @Override
     public void onBackPressed() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(GuestActivity.this);
         builder.setCancelable(false);
-        builder.setTitle("GreenSense");
-        builder.setMessage("Are you sure you want to leave?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.alrtTitle));
+        builder.setMessage(getString(R.string.alrtMsg));
+        builder.setPositiveButton(getString(R.string.alrtYes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 GuestActivity.this.finish();
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.alrtNo), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
             }

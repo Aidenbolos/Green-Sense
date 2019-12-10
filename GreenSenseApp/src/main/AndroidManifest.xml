@@ -36,7 +36,15 @@
         <activity
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
-        <activity android:name=".PlantInfoActivity" />
+        <activity
+            android:name=".PlantInfoActivity"
+            android:parentActivityName=".GuestActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GuestActivity" />
+        </activity>
         <activity android:name=".GuestActivity" />
         <activity android:name=".Login">
             <intent-filter>

@@ -53,7 +53,15 @@
         <activity
             android:name="rad.technologies.greensense.BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
-        <activity android:name="rad.technologies.greensense.PlantInfoActivity" />
+        <activity
+            android:name="rad.technologies.greensense.PlantInfoActivity"
+            android:parentActivityName="rad.technologies.greensense.GuestActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GuestActivity" />
+        </activity>
         <activity android:name="rad.technologies.greensense.GuestActivity" />
         <activity android:name="rad.technologies.greensense.Login" >
             <intent-filter>

@@ -114,6 +114,26 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="invalEm">Email Invalide</string>
     <string name="Green_Houses">Serres</string>
     <string name="selectGreenhouse">Sélectionnez la serre que vous souhaitez voir</string>
+    <string name="abt_us_redirect">Déjà à propos de nous</string>
+    <string name="alrtTitle">GreenSense</string>
+    <string name="alrtMsg">Êtes-vous sûr de vouloir quitter?</string>
+    <string name="alrtYes">Oui</string>
+    <string name="alrtNo">Non</string>
+    <string name="greensenseTitle">GreenSense</string>
+    <string name="clouds">clouds</string>
+    <string name="wind">wind</string>
+    <string name="mist">mist</string>
+    <string name="rain">rain</string>
+    <string name="sunny">sunny</string>
+    <string name="snow">snow</string>
+    <string name="storm">storm</string>
+    <string name="abtTitle">À propos de nous</string>
+    <string name="guestTitle">Invité GreenSense</string>
+    <string name="noteTitle">Créer une note</string>
+    <string name="setSave">Paramètres sauvegardés</string>
+    <string name="setTitle">Paramètres</string>
+    <string name="defaulEmail">greensense@gmail.com</string>
+    <string name="sett_redirect">Déjà dans les paramètres</string>
     <string-array name="greenhouses">
         <item>Serre 1</item>
         <item>Serre 2</item>

@@ -51,7 +51,7 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Settings");
+        getSupportActionBar().setTitle(getString(R.string.setTitle));
         myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         //Pickup user email from shared preferences
@@ -66,15 +66,15 @@ public class SettingsActivity extends AppCompatActivity {
 
         switch(org) {
             case "Humber":
-                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.humber_blue));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             case "York":
-                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.york_red));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             default:
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setTitleTextColor(Color.WHITE);
         }
 
         SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
@@ -135,7 +135,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 editor.apply();
-                Toast.makeText(SettingsActivity.this, "Settings saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, R.string.setSave, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -172,7 +172,7 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
             // action with ID action_settings was selected
             case R.id.action_settings:
-                Toast.makeText(this, "Already in settings", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.sett_redirect, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_signout:
                 try {

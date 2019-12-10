@@ -7,5 +7,9 @@
     <color name="grayColor">#eeeeee</color>
     <color name="edittext_background">#F8F8FF</color>
     <color name="green">#83CC23</color>
+    <color name="humber_blue">#00008B</color>
+    <color name="york_red">#DC143C</color>
+    <color name="BGgray">#A9A9A9</color>
+
 
 </resources>

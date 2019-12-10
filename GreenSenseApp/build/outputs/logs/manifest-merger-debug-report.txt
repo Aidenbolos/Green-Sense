@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
 MERGED from [com.github.androdocs:Simple-HTTP-Request:v1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\5beb483b9ae90d41a7dd6e99434a227e\Simple-HTTP-Request-v1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\e7aad8c8179f942c9a8041a4bfa60c52\play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:17.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\87d832e2c047f43b9e228930679ceb96\firebase-analytics-17.2.1\AndroidManifest.xml:2:1-9:12
@@ -76,20 +76,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Daniel\.gradle\caches\transfor
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\7189998640d03cd8247a01f86409460d\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\dacab2ed7474744f5d85ca77b44b418e\protolite-well-known-types-17.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\e784f8a678ea44afdc5d8546de0f1e45\grpc-android-1.21.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
 	package
 		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:3:5-42
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:2:11-69
@@ -118,7 +118,7 @@ ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\m
 	android:name
 		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:9:5-76:19
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:9:5-84:19
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\e7aad8c8179f942c9a8041a4bfa60c52\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\e7aad8c8179f942c9a8041a4bfa60c52\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:17.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\87d832e2c047f43b9e228930679ceb96\firebase-analytics-17.2.1\AndroidManifest.xml:7:5-20
@@ -214,49 +214,51 @@ ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\m
 	android:name
 		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:37:13-53
 activity#rad.technologies.greensense.PlantInfoActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:39:9-55
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:39:9-47:20
+	android:parentActivityName
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:39:19-52
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:40:13-46
 activity#rad.technologies.greensense.GuestActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:40:9-51
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:48:9-51
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:40:19-48
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:48:19-48
 activity#rad.technologies.greensense.Login
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:41:9-47:20
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:49:9-55:20
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:41:19-40
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:49:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:42:13-46:29
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:50:13-54:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:43:17-69
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:45:17-77
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:45:27-74
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:53:27-74
 activity#rad.technologies.greensense.MainActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:48:9-50
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:56:9-50
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:48:19-47
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:56:19-47
 activity#rad.technologies.greensense.SettingsActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:49:9-57:20
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:57:9-65:20
 	android:parentActivityName
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:51:13-55
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:59:13-55
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:50:13-45
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:58:13-45
 activity#rad.technologies.greensense.TempAndHumidityActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:58:9-66:20
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:66:9-74:20
 	android:parentActivityName
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:60:13-55
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:68:13-55
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:59:13-52
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:67:13-52
 activity#rad.technologies.greensense.DevicesActivity
-ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:67:9-75:20
+ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:75:9-83:20
 	android:parentActivityName
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:69:13-55
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:77:13-55
 	android:name
-		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:68:13-44
+		ADDED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml:76:13-44
 uses-sdk
 INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Daniel\AndroidStudioProjects\Green-Sense\GreenSenseApp\src\main\AndroidManifest.xml

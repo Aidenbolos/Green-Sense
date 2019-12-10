@@ -51,18 +51,18 @@ public class Login extends AppCompatActivity {
         int BGcolor = sharedPreferences.getInt("BGcolor", 0);
         switch (BGcolor) {
             case 0:
-                rootView.setBackgroundColor(Color.parseColor("#dd7e28"));
+                rootView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 break;
             case 1:
-                rootView.setBackgroundColor(Color.parseColor("#80CD29"));
-                btnLogin.setBackgroundColor(Color.parseColor("#dd7e28"));
-                btnGuest.setBackgroundColor(Color.parseColor("#dd7e28"));
+                rootView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                btnLogin.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                btnGuest.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 break;
             case 2:
-                rootView.setBackgroundColor(Color.parseColor("#A9A9A9"));
+                rootView.setBackgroundColor(getResources().getColor(R.color.BGgray));
                 break;
             default:
-                rootView.setBackgroundColor(Color.parseColor("#dd7e28"));
+                rootView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 break;
         }
 
