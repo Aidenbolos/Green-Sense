@@ -3,6 +3,7 @@ package rad.technologies.greensense;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
@@ -35,10 +38,32 @@ public class Login extends AppCompatActivity {
         // set the view now
         setContentView(R.layout.activity_login);
 
+        final View rootView = findViewById(R.id.LinLayout);
         inputEmail = findViewById(R.id.email);
         inputPassword =  findViewById(R.id.password);
         progressBar =  findViewById(R.id.progressBar);
         Button btnLogin = findViewById(R.id.btn_login);
+        Button btnGuest = findViewById(R.id.btn_guest);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+
+        int BGcolor = sharedPreferences.getInt("BGcolor", 0);
+        switch (BGcolor) {
+            case 0:
+                rootView.setBackgroundColor(Color.parseColor("#dd7e28"));
+                break;
+            case 1:
+                rootView.setBackgroundColor(Color.parseColor("#80CD29"));
+                btnLogin.setBackgroundColor(Color.parseColor("#dd7e28"));
+                btnGuest.setBackgroundColor(Color.parseColor("#dd7e28"));
+                break;
+            case 2:
+                rootView.setBackgroundColor(Color.parseColor("#A9A9A9"));
+                break;
+            default:
+                rootView.setBackgroundColor(Color.parseColor("#dd7e28"));
+                break;
+        }
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -88,8 +113,6 @@ public class Login extends AppCompatActivity {
                 }
             });
         });
-
-        Button btnGuest = findViewById(R.id.btn_guest);
 
         // Capture button clicks
         btnGuest.setOnClickListener(view -> {

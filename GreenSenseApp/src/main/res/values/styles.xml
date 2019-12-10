@@ -7,10 +7,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppTheme.NoActionBar">
+    <style name="AppTheme.Base" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme.Humber" >
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#00008B</item>
+        <item name="colorPrimaryDark">#4169E1</item>
+        <item name="android:colorSecondary">#ffffff</item>
+        <item name="colorAccent">#FFD700</item>
+    </style>
+
     <style name="SCBSwitch" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->
         <item name="colorControlActivated">@color/green</item>
