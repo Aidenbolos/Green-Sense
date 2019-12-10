@@ -16,14 +16,7 @@ tools:context=".MainActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/welcome_guest"
-        android:textSize="10pt"
-        android:textStyle="bold" />
+
     <FrameLayout
         android:id="@+id/fragment_frame"
         android:layout_width="match_parent"

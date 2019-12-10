@@ -47,7 +47,7 @@ public class NoteEditorActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Create Note");
+        getSupportActionBar().setTitle(getString(R.string.noteTitle));
         myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         //Pickup user email from shared preferences
@@ -62,15 +62,15 @@ public class NoteEditorActivity extends AppCompatActivity {
 
         switch(org) {
             case "Humber":
-                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.humber_blue));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             case "York":
-                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.york_red));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             default:
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setTitleTextColor(Color.WHITE);
         }
 
         EditText editText = findViewById(R.id.editText);
@@ -130,6 +130,14 @@ public class NoteEditorActivity extends AppCompatActivity {
                     startActivityForResult(camera_intent, pic_id);
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.action_about:
+                try {
+                    startActivity(new Intent(this,AboutUs.class));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;

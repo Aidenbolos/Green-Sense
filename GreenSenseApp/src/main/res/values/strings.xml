@@ -114,6 +114,26 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="invalEm">Invalid Email</string>
     <string name="Green_Houses">Greenhouses</string>
     <string name="selectGreenhouse">Select the Greenhouse you\'d like to view</string>
+    <string name="abt_us_redirect">Already in about us</string>
+    <string name="alrtTitle">GreenSense</string>
+    <string name="alrtMsg">Are you sure you want to leave?</string>
+    <string name="alrtYes">Yes</string>
+    <string name="alrtNo">No</string>
+    <string name="greensenseTitle">GreenSense</string>
+    <string name="clouds">clouds</string>
+    <string name="wind">wind</string>
+    <string name="mist">mist</string>
+    <string name="rain">rain</string>
+    <string name="sunny">sunny</string>
+    <string name="snow">snow</string>
+    <string name="storm">storm</string>
+    <string name="abtTitle">About Us</string>
+    <string name="guestTitle">GreenSense Guest</string>
+    <string name="noteTitle">Create Note</string>
+    <string name="setSave">Settings saved</string>
+    <string name="setTitle">Settings</string>
+    <string name="defaulEmail">greensense@gmail.com</string>
+    <string name="sett_redirect">Already in settings</string>
     <string-array name="greenhouses">
         <item>Greenhouse 1</item>
         <item>Greenhouse 2</item>

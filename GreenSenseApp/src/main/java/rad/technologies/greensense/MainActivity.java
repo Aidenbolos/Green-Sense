@@ -151,14 +151,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
-        builder.setTitle("GreenSense");
-        builder.setMessage("Are you sure you want to leave?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.alrtTitle));
+        builder.setMessage(getString(R.string.alrtMsg));
+        builder.setPositiveButton(getString(R.string.alrtYes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 MainActivity.this.finish();
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.alrtNo), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
             }

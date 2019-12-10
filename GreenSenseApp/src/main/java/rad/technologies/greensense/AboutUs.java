@@ -41,7 +41,7 @@ public class AboutUs extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("About Us");
+        getSupportActionBar().setTitle(getString(R.string.abtTitle));
         myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         //Pickup user email from shared preferences
@@ -56,15 +56,15 @@ public class AboutUs extends AppCompatActivity {
 
         switch(org) {
             case "Humber":
-                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.humber_blue));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             case "York":
-                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.york_red));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 break;
             default:
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setTitleTextColor(Color.WHITE);
         }
 
     }
@@ -118,7 +118,7 @@ public class AboutUs extends AppCompatActivity {
                     }
                     break;
                 case R.id.action_about:
-                    Toast.makeText(this, "Already in about us", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.abt_us_redirect, Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     return super.onOptionsItemSelected(item);

@@ -172,19 +172,19 @@ public class home_frag extends Fragment {
         switch(org) {
             case "Humber":
                 title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
-                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.humber_blue));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 orgImage.setImageResource(R.drawable.humberlogo);
                 break;
             case "York":
                 title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
-                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                myToolbar.setBackgroundColor(getResources().getColor(R.color.york_red));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 orgImage.setImageResource(R.drawable.yorklogo);
                 break;
             default:
-                title.setText(getString(R.string.welcome_to) + "GreenSense");
-                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                title.setText(getString(R.string.welcome_to) + getString(R.string.greensenseTitle));
+                myToolbar.setTitleTextColor(Color.WHITE);
                 orgImage.setImageResource(R.drawable.plants);
         }
 
@@ -232,8 +232,6 @@ public class home_frag extends Fragment {
         }
     }
 
-
-
     @SuppressLint("StaticFieldLeak")
     class weatherTask extends AsyncTask<String, Void, String> {
 
@@ -262,25 +260,25 @@ public class home_frag extends Fragment {
                 /* Populating extracted data into our views */
                 statusTxt.setText(weatherDescription.toUpperCase());
 
-                if (weatherDescription.toLowerCase().contains("clouds")){
+                if (weatherDescription.toLowerCase().contains(getString(R.string.clouds))){
                     condition.setImageResource(R.drawable.clouds);
                 }
-                else if (weatherDescription.toLowerCase().contains("wind")) {
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.wind))) {
                     condition.setImageResource(R.drawable.wind);
                 }
-                else if (weatherDescription.toLowerCase().contains("mist")){
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.mist))){
                     condition.setImageResource(R.drawable.drop);
                 }
-                else if (weatherDescription.toLowerCase().contains("rain")){
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.rain))){
                     condition.setImageResource(R.drawable.drop);
                 }
-                else if (weatherDescription.toLowerCase().contains("sunny")){
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.sunny))){
                     condition.setImageResource(R.drawable.sun);
                 }
-                else if (weatherDescription.toLowerCase().contains("snow")){
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.snow))){
                     condition.setImageResource(R.drawable.snow);
                 }
-                else if (weatherDescription.toLowerCase().contains("storm")) {
+                else if (weatherDescription.toLowerCase().contains(getString(R.string.storm))) {
                     condition.setImageResource(R.drawable.storm);
                 }
                 else {
