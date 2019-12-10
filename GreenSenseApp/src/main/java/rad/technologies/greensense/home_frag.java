@@ -159,24 +159,26 @@ public class home_frag extends Fragment {
 
         //Set title to organization name
         TextView title = view.findViewById(R.id.textView);
-        title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
 
         //Set slideshow to organization logo
         ImageView orgImage = view.findViewById(R.id.image_one);
 
         switch(org) {
-            case "Gmail":
-                orgImage.setImageResource(R.drawable.logo);
-                break;
             case "Humber":
-                myToolbar.setBackgroundColor(Color.parseColor("#171473"));
+                title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
+                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
                 orgImage.setImageResource(R.drawable.humberlogo);
                 break;
             case "York":
+                title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
                 myToolbar.setBackgroundColor(Color.parseColor("#ff0000"));
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
                 orgImage.setImageResource(R.drawable.yorklogo);
                 break;
             default:
+                title.setText(getString(R.string.welcome_to) + "GreenSense");
+                orgImage.setImageResource(R.drawable.logo);
         }
 
         // viewFlipper = view.findViewById(R.id.image_view_flipper);
@@ -201,7 +203,7 @@ public class home_frag extends Fragment {
 
         return view;
     }
-
+/*
     public void onPause(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         stopSlideshow();
@@ -222,6 +224,8 @@ public class home_frag extends Fragment {
             viewFlipper.stopFlipping();
         }
     }
+ */
+
 
     @SuppressLint("StaticFieldLeak")
     class weatherTask extends AsyncTask<String, Void, String> {

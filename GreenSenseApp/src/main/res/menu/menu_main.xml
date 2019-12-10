@@ -8,6 +8,11 @@
         android:title="@string/Camera"
         android:icon="@drawable/ic_camera"/>
     <item
+        android:id="@+id/action_about"
+        app:showAsAction="never"
+        android:title="@string/aboutus">
+    </item>
+    <item
         android:id="@+id/action_help"
         app:showAsAction="never"
         android:title="@string/Help" />
@@ -20,11 +25,6 @@
         android:id="@+id/action_signout"
         app:showAsAction="never"
         android:title="@string/signout">
-    </item>
-    <item
-        android:id="@+id/action_about"
-        app:showAsAction="never"
-        android:title="@string/aboutus">
     </item>
 
 </menu>
