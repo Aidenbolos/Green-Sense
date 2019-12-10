@@ -16,9 +16,9 @@
             android:id="@+id/tvGreenSense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/std20"
+            android:layout_marginTop="@dimen/std0"
+            android:layout_marginEnd="@dimen/std20"
             android:text="@string/build_your_own"
             android:textColor="@android:color/black"
             android:textSize="@dimen/title_text_size"
@@ -30,22 +30,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/tvGreenSense"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/std20"
             android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="@dimen/dips220"
                 android:orientation="horizontal"
                 android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/fl_youtube"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:background="@drawable/round_bg_white">
 
 
@@ -54,8 +54,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/green"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp"
-                        android:textSize="16sp"
+                        android:layout_marginBottom="@dimen/std30"
+                        android:textSize="@dimen/small_text_size"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
                         android:text="@string/youtube" />
@@ -66,10 +66,10 @@
 
                 <FrameLayout
                     android:id="@+id/fl_website"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:paddingStart="@dimen/padding_start_end_20dp"
                     android:background="@drawable/rounded_button_white"
                     android:paddingEnd="@dimen/padding_start_end_20dp">
@@ -80,7 +80,7 @@
                         android:textColor="@color/green"
                         android:layout_gravity="center"
                         android:layout_marginBottom="30dp"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/small_text_size"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"
                         android:text="@string/website" />
@@ -92,16 +92,16 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="@dimen/dips220"
                 android:orientation="horizontal"
                 android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/fl_parts"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:background="@drawable/round_bg_white">
 
 
@@ -111,8 +111,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/green"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp"
-                        android:textSize="16sp"
+                        android:layout_marginBottom="@dimen/std30"
+                        android:textSize="@dimen/small_text_size"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
                         android:text="@string/parts" />
@@ -123,10 +123,10 @@
 
                 <FrameLayout
                     android:id="@+id/fl_contact_us"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:paddingStart="@dimen/padding_start_end_20dp"
                     android:paddingEnd="@dimen/padding_start_end_20dp">
 
@@ -136,8 +136,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/green"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp"
-                        android:textSize="16sp"
+                        android:layout_marginBottom="@dimen/std30"
+                        android:textSize="@dimen/small_text_size"
                         android:visibility="gone"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"

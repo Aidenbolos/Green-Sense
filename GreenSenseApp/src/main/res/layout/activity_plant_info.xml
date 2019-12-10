@@ -18,25 +18,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rlMoisture"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="@dimen/std20"
+        android:layout_marginTop="@dimen/std70"
+        android:layout_marginEnd="@dimen/std20"
+        android:layout_marginBottom="@dimen/std20"
         android:orientation="vertical"
         tools:ignore="NotSibling">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/std60"
             android:orientation="horizontal"
             android:baselineAligned="false">
 
             <FrameLayout
                 android:id="@+id/fl_plant_cactus"
-                android:layout_width="0sp"
+                android:layout_width="@dimen/std0"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/std10"
                 android:layout_weight="1"
                 android:background="@drawable/round_bg_white">
 
@@ -48,7 +48,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/cactusTxt"
                     android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_text_size" />
 
 
             </FrameLayout>
@@ -56,9 +56,9 @@
 
             <FrameLayout
                 android:id="@+id/fl_plant_herbs"
-                android:layout_width="0sp"
+                android:layout_width="@dimen/std0"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/std10"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button_white"
                 android:paddingStart="@dimen/padding_start_end_20dp"
@@ -71,7 +71,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/herbsTxt"
                     android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_text_size" />
 
 
             </FrameLayout>
@@ -81,15 +81,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/std60"
             android:orientation="horizontal"
             android:baselineAligned="false">
 
             <FrameLayout
                 android:id="@+id/fl_plant_ferns"
-                android:layout_width="0sp"
+                android:layout_width="@dimen/std0"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/std10"
                 android:layout_weight="1"
                 android:background="@drawable/round_bg_white">
 
@@ -101,7 +101,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/fernsTxt"
                     android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_text_size" />
 
 
             </FrameLayout>
@@ -109,9 +109,9 @@
 
             <FrameLayout
                 android:id="@+id/fl_plant_confiers"
-                android:layout_width="0sp"
+                android:layout_width="@dimen/std0"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/std10"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button_white"
                 android:paddingStart="@dimen/padding_start_end_20dp"
@@ -125,7 +125,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/conifersTxt"
                     android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_text_size" />
 
 
             </FrameLayout>

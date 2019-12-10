@@ -15,11 +15,11 @@
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="520dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="113dp"
-            android:divider="#dd7e28"
-            android:dividerHeight="1dp"
+            android:layout_height="@dimen/dips520"
+            android:layout_marginTop="@dimen/std0"
+            android:layout_marginBottom="@dimen/dips113"
+            android:divider="@color/colorPrimary"
+            android:dividerHeight="@dimen/std1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.491"
@@ -29,8 +29,6 @@
 
         </ListView>
 
-        android:layout_width=""
-        android:layout_height=""
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -38,12 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="@dimen/std80"
+        android:layout_marginTop="@dimen/std80"
+        android:layout_marginEnd="@dimen/std28"
+        android:layout_marginBottom="@dimen/std70"
         android:src="@drawable/ic_add_black_24dp"
-        app:borderWidth="0dp"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp" />
+        app:borderWidth="@dimen/std0"
+        app:elevation="@dimen/std5"
+        app:pressedTranslationZ="@dimen/std12" />
 </FrameLayout>
