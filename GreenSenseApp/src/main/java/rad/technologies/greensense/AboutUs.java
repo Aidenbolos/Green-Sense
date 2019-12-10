@@ -37,8 +37,8 @@ public class AboutUs extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("About Us");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
         @Override
         public boolean onCreateOptionsMenu (Menu menu){

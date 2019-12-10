@@ -62,7 +62,11 @@
             </intent-filter>
         </activity>
         <activity android:name="rad.technologies.greensense.MainActivity" />
-        <activity android:name="rad.technologies.greensense.SettingsActivity" />
+        <activity android:name="rad.technologies.greensense.SettingsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name="rad.technologies.greensense.TempAndHumidityActivity"
             android:parentActivityName="rad.technologies.greensense.MainActivity" >
