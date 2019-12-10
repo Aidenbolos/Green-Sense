@@ -61,6 +61,7 @@ public class home_frag extends Fragment {
     private FusedLocationProviderClient mFusedLocationClient;
 
     private TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
+    private ImageView condition;
 
     private boolean checkPermissions(){
         return ActivityCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
@@ -181,11 +182,11 @@ public class home_frag extends Fragment {
                 orgImage.setImageResource(R.drawable.logo);
         }
 
-        // viewFlipper = view.findViewById(R.id.image_view_flipper);
-        // viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
-        // viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
+        viewFlipper = view.findViewById(R.id.image_view_flipper);
+        viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
+        viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
 
-       // startSlideshow();
+       startSlideshow();
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
         getLastLocation();
@@ -194,7 +195,7 @@ public class home_frag extends Fragment {
         TextView tv1 = view.findViewById(R.id.textView3);
         tv1.setText(CITY);
         errorTxt = view.findViewById(R.id.error);
-        addressTxt = view.findViewById(R.id.cityText);
+        condition = view.findViewById(R.id.condIcon);
         statusTxt = view.findViewById(R.id.condDescr);
         tempTxt = view.findViewById(R.id.temp);
         windTxt = view.findViewById(R.id.windSpeed);
@@ -203,7 +204,7 @@ public class home_frag extends Fragment {
 
         return view;
     }
-/*
+
     public void onPause(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         stopSlideshow();
@@ -224,7 +225,7 @@ public class home_frag extends Fragment {
             viewFlipper.stopFlipping();
         }
     }
- */
+
 
 
     @SuppressLint("StaticFieldLeak")
@@ -253,8 +254,33 @@ public class home_frag extends Fragment {
                 String address = jsonObj.getString("name") + ", " + sys.getString("country");
 
                 /* Populating extracted data into our views */
-                addressTxt.setText(address);
                 statusTxt.setText(weatherDescription.toUpperCase());
+
+                if (weatherDescription.toLowerCase().indexOf("clouds") != -1){
+                    condition.setImageResource(R.drawable.clouds);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("wind") != -1) {
+                    condition.setImageResource(R.drawable.wind);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("mist") != -1){
+                    condition.setImageResource(R.drawable.drop);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("rain") != -1){
+                    condition.setImageResource(R.drawable.drop);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("sunny") != -1){
+                    condition.setImageResource(R.drawable.sun);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("snow") != -1){
+                    condition.setImageResource(R.drawable.snow);
+                }
+                else if (weatherDescription.toLowerCase().indexOf("storm") != -1) {
+                    condition.setImageResource(R.drawable.storm);
+                }
+                else {
+                    condition.setImageResource(R.drawable.temperature);
+                }
+
                 tempTxt.setText(temp);
                 windTxt.setText(String.format("%s%s", windSpeed, getString(R.string.windMes)));
                 pressureTxt.setText(String.format(" %s%s", pressure, getString(R.string.presMes)));

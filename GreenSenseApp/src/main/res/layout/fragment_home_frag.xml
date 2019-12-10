@@ -16,22 +16,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Greenhouse"
             android:textColor="@android:color/black"
             android:textSize="10pt"
             android:textStyle="bold" />
 
-
-        <ImageView
-            android:id="@+id/image_one"
-            android:layout_width="298dp"
-            android:layout_height="167dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/humber_plants" />
-
+        <ViewFlipper
+            android:id="@+id/image_view_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/image_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/humber_plants" />
+            <ImageView
+                android:id="@+id/image_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/greenhouse_building" />
+            <ImageView
+                android:id="@+id/image_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/greenhouse_plants" />
+        </ViewFlipper>
 
         <TextView
             android:id="@+id/textView2"
@@ -40,7 +60,7 @@
             android:layout_gravity="center"
             android:text="Current Local Weather"
             android:textColor="@android:color/black"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textSize="10pt"
             android:textStyle="bold" />
 
@@ -73,27 +93,10 @@
             tools:context=".MainActivity">
 
             <TextView
-                android:id="@+id/cityText"
-                style="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textColor="@android:color/black"
-                android:textSize="10pt" />
-
-            <ImageView
-                android:id="@+id/condIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/cityText"
-                android:layout_alignParentStart="true" />
-
-            <TextView
                 android:id="@+id/condDescr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/condIcon"
-                android:layout_alignStart="@id/condIcon"
+                android:layout_alignParentLeft="true"
                 android:textColor="@android:color/black"
                 android:textSize="10pt" />
 
@@ -102,10 +105,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/condDescr"
-                android:layout_marginLeft="12dp"
                 android:layout_toRightOf="@id/condDescr"
+                android:layout_marginLeft="4dp"
                 android:textColor="@android:color/black"
                 android:textSize="10pt" />
+
+            <ImageView
+                android:id="@+id/condIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
 
             <TextView
                 android:id="@+id/pressLab"
