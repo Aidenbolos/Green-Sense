@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="@dimen/std60"
         tools:context=".TempAndHumidityActivity"
         tools:ignore="UselessParent">
 
@@ -19,12 +19,12 @@
 
             <ImageView
                 android:id="@+id/ivBack"
-                android:layout_width="50dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="@dimen/std50"
+                android:layout_height="@dimen/std25"
+                android:layout_marginStart="@dimen/std10"
+                android:layout_marginEnd="@dimen/std10"
                 android:visibility="gone"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/std10"
                 android:src="@drawable/arrow_right_dark"
                 android:contentDescription="@string/app_name" />
 
@@ -34,9 +34,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ivBack"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/std20"
+                android:layout_marginTop="@dimen/std0"
+                android:layout_marginEnd="@dimen/std20"
                 android:text="@string/greenhouse_temp_amp_humidity"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/title_text_size"
@@ -49,17 +49,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvGreenhouse"
                 android:layout_marginStart="@dimen/padding_start_end_20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/std10"
                 android:layout_marginEnd="@dimen/padding_start_end_20dp"
                 android:background="@drawable/round_bg_white">
 
                 <ImageView
                     android:id="@+id/ivTemp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="@dimen/std50"
+                    android:layout_height="@dimen/std50"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginEnd="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:src="@drawable/temperature"
                     android:contentDescription="@string/app_name" />
 
@@ -67,13 +67,13 @@
                     android:id="@+id/tvTemerature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginEnd="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:layout_toEndOf="@id/ivTemp"
                     android:text="@string/greenhouse_temperature"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_text_size"
                     android:textStyle="bold"
                     tools:ignore="RelativeOverlap" />
 
@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvTemerature"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/std10"
                     android:layout_toEndOf="@id/ivTemp"
                     android:text=""
                     android:textColor="@color/green" />
@@ -94,8 +94,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="@dimen/std5"
+                    android:layout_marginEnd="@dimen/std10"
                     android:src="@drawable/ic_refresh_black_24dp"
                     android:contentDescription="@string/app_name" />
 
@@ -104,8 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ivTemp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="@dimen/std10"
+                    android:layout_marginBottom="@dimen/std10"
                     android:progress="50"
                     android:progressDrawable="@drawable/seekbar_style"
                     android:thumb="@drawable/custom_thumb" />
@@ -126,10 +126,10 @@
 
                 <ImageView
                     android:id="@+id/ivHumdity"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="@dimen/std50"
+                    android:layout_height="@dimen/std50"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:src="@drawable/drop"
                     android:contentDescription="@string/app_name" />
 
@@ -137,12 +137,12 @@
                     android:id="@+id/tvHumdity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:layout_toEndOf="@id/ivHumdity"
                     android:text="@string/greenhouse_humidity"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_text_size"
                     android:textStyle="bold"
                     tools:ignore="RelativeOverlap" />
 
@@ -152,7 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvHumdity"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/std10"
                     android:layout_toEndOf="@id/ivHumdity"
                     android:text=""
                     android:textColor="@color/green" />
@@ -163,8 +163,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="@dimen/std5"
+                    android:layout_marginEnd="@dimen/std10"
                     android:src="@drawable/ic_refresh_black_24dp"
                     android:contentDescription="@string/app_name" />
 
@@ -174,8 +174,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ivHumdity"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="@dimen/std10"
+                    android:layout_marginBottom="@dimen/std10"
                     android:progress="50"
                     android:progressDrawable="@drawable/seekbar_style"
                     android:thumb="@drawable/custom_thumb" />
@@ -190,16 +190,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rlHumidty"
                 android:layout_marginStart="@dimen/padding_start_end_20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/std20"
                 android:layout_marginEnd="@dimen/padding_start_end_20dp"
                 android:background="@drawable/round_bg_white">
 
                 <ImageView
                     android:id="@+id/ivMoisture"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="@dimen/std50"
+                    android:layout_height="@dimen/std50"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:src="@drawable/clouds"
                     android:contentDescription="@string/app_name" />
 
@@ -207,12 +207,12 @@
                     android:id="@+id/tvMoisture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="@dimen/std10"
+                    android:layout_marginTop="@dimen/std30"
                     android:layout_toEndOf="@id/ivMoisture"
                     android:text="@string/greenhouse_moisture"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_text_size"
                     android:textStyle="bold"
                     tools:ignore="RelativeOverlap" />
 
@@ -222,7 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvMoisture"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/std10"
                     android:layout_toEndOf="@id/ivMoisture"
                     android:text=""
                     android:textColor="@color/green" />
@@ -233,8 +233,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="@dimen/std5"
+                    android:layout_marginEnd="@dimen/std10"
                     android:src="@drawable/ic_refresh_black_24dp"
                     android:contentDescription="@string/app_name" />
 
@@ -244,8 +244,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ivMoisture"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="@dimen/std10"
+                    android:layout_marginBottom="@dimen/std10"
                     android:progress="50"
                     android:progressDrawable="@drawable/seekbar_style"
                     android:thumb="@drawable/custom_thumb" />
@@ -258,21 +258,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/rlMoisture"
-                android:layout_margin="20dp"
+                android:layout_margin="@dimen/std20"
                 android:orientation="vertical">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="@dimen/std60"
                     android:orientation="horizontal"
                     android:baselineAligned="false">
 
                     <FrameLayout
                         android:id="@+id/fl_plant_cactus"
-                        android:layout_width="0sp"
+                        android:layout_width="@dimen/std0"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/std10"
                         android:layout_weight="1"
                         android:background="@drawable/round_bg_white">
 
@@ -284,7 +284,7 @@
                             android:gravity="center_horizontal"
                             android:text="@string/cactusTxt"
                             android:textColor="@color/green"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/small_text_size" />
 
 
                     </FrameLayout>
@@ -292,9 +292,9 @@
 
                     <FrameLayout
                         android:id="@+id/fl_plant_herbs"
-                        android:layout_width="0sp"
+                        android:layout_width="@dimen/std0"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/std10"
                         android:layout_weight="1"
                         android:background="@drawable/rounded_button_white"
                         android:paddingStart="@dimen/padding_start_end_20dp"
@@ -307,7 +307,7 @@
                             android:gravity="center_horizontal"
                             android:text="@string/herbsTxt"
                             android:textColor="@color/green"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/small_text_size" />
 
 
                     </FrameLayout>
@@ -317,15 +317,15 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="@dimen/std60"
                     android:orientation="horizontal"
                     android:baselineAligned="false">
 
                     <FrameLayout
                         android:id="@+id/fl_plant_ferns"
-                        android:layout_width="0sp"
+                        android:layout_width="@dimen/std0"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/std10"
                         android:layout_weight="1"
                         android:background="@drawable/round_bg_white">
 
@@ -337,7 +337,7 @@
                             android:gravity="center_horizontal"
                             android:text="@string/fernsTxt"
                             android:textColor="@color/green"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/small_text_size" />
 
 
                     </FrameLayout>
@@ -345,9 +345,9 @@
 
                     <FrameLayout
                         android:id="@+id/fl_plant_confiers"
-                        android:layout_width="0sp"
+                        android:layout_width="@dimen/std0"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/std10"
                         android:layout_weight="1"
                         android:background="@drawable/rounded_button_white"
                         android:paddingStart="@dimen/padding_start_end_20dp"
@@ -361,7 +361,7 @@
                             android:gravity="center_horizontal"
                             android:text="@string/conifersTxt"
                             android:textColor="@color/green"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/small_text_size" />
 
 
                     </FrameLayout>

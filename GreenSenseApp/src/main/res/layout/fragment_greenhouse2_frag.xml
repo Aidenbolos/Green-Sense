@@ -16,9 +16,9 @@
             android:id="@+id/tvGreenSense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/std20"
+            android:layout_marginTop="@dimen/std20"
+            android:layout_marginEnd="@dimen/std20"
             android:text="@string/welcome_to_greenhouse_2"
             android:textColor="@android:color/black"
             android:textSize="@dimen/title_text_size"
@@ -32,7 +32,7 @@
             android:background="@drawable/round_bg_white"
             android:layout_marginEnd="@dimen/padding_start_end_20dp"
             android:layout_marginStart="@dimen/padding_start_end_20dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/std20">
 
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/greenhouse_control_system"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/std20"
                 android:layout_centerHorizontal="true"
                 android:textSize="@dimen/middle_text_size"
                 android:textStyle="bold"
@@ -49,9 +49,9 @@
 
             <ImageView
                 android:id="@+id/ivRemote"
-                android:layout_width="50dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="10dp"
+                android:layout_width="@dimen/std50"
+                android:layout_height="@dimen/std80"
+                android:layout_marginBottom="@dimen/std10"
                 android:layout_below="@id/tvGreenHouseControlSystem"
                 android:layout_toStartOf="@id/tvRemoteDevice"
                 android:src="@drawable/remote"
@@ -60,12 +60,12 @@
 
             <TextView
                 android:id="@+id/tvRemoteDevice"
-                android:layout_width="150dp"
+                android:layout_width="@dimen/std150"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvGreenHouseControlSystem"
                 android:layout_centerHorizontal="true"
                 android:text="@string/remote_device"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/std20"
                 android:gravity="center_horizontal"
                 android:textColor="@android:color/black" />
 
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/std10"
                 android:checked="true"
                 android:layout_below="@id/tvRemoteDevice"
                 android:textStyle="bold"
@@ -88,27 +88,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/rlRemoteDevice"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/std20"
             android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="@dimen/dips220"
                 android:orientation="horizontal"
                 android:baselineAligned="false">
 
                 <FrameLayout
                     android:id="@+id/flTempAndHumidity"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:background="@drawable/round_bg_white">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/std50"
+                        android:layout_height="@dimen/std50"
                         android:src="@drawable/temperature"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
                         android:layout_marginStart="20dp"
@@ -120,7 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginBottom="@dimen/std30"
                         android:paddingStart="@dimen/padding_start_end_20dp"
                         android:paddingEnd="@dimen/padding_start_end_20dp"
                         android:text="@string/temperature_humidity_amp_nmoisture"
@@ -133,21 +133,21 @@
 
                 <FrameLayout
                     android:id="@+id/flManualControl"
-                    android:layout_width="0sp"
+                    android:layout_width="@dimen/std0"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/std10"
                     android:paddingStart="@dimen/padding_start_end_20dp"
                     android:background="@drawable/rounded_button_white"
                     android:paddingEnd="@dimen/padding_start_end_20dp">
 
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/std50"
+                        android:layout_height="@dimen/std50"
                         android:src="@drawable/controls"
                         android:layout_marginTop="@dimen/padding_start_end_20dp"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="@dimen/std20"
                         android:contentDescription="@string/app_name" />
 
 
@@ -157,7 +157,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/green"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginBottom="@dimen/std30"
                         android:textSize="@dimen/middle_text_size"
                         android:paddingStart="@dimen/padding_start_end_15dp"
                         android:paddingEnd="@dimen/padding_start_end_15dp"

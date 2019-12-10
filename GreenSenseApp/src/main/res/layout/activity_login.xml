@@ -27,7 +27,7 @@
             android:layout_width="@dimen/logo_w_h"
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="@dimen/std30"
             android:contentDescription="@string/greensense_logo"
             android:src="@drawable/logo" />
 
@@ -35,7 +35,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/std10"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/white"
@@ -46,7 +46,7 @@
             android:id="@+id/password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/std10"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
@@ -59,7 +59,7 @@
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
+            android:layout_marginTop="@dimen/std20"
             android:background="@drawable/rounded_button"
             android:text="@string/btn_login"
             android:textColor="@android:color/black" />
@@ -68,7 +68,7 @@
             android:id="@+id/btn_guest"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
+            android:layout_marginTop="@dimen/std40"
             android:background="@drawable/rounded_button"
             android:text="@string/continue_as_guest"
             android:textColor="@android:color/black" />
@@ -79,11 +79,11 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/std30"
+        android:layout_height="@dimen/std30"
         android:layout_gravity="center|bottom"
-        android:layout_marginEnd="411dp"
-        android:layout_marginBottom="731dp"
+        android:layout_marginEnd="@dimen/dips411"
+        android:layout_marginBottom="@dimen/dips731"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

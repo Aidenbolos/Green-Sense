@@ -8,8 +8,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:layout_marginBottom="50dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/std50"
         android:background="@color/white"
         tools:ignore="UselessParent">
 
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="@dimen/std5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_below="@id/ll_name"
-            android:padding="5dp">
+            android:padding="@dimen/std5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ll_email"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="@dimen/std5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -84,15 +84,15 @@
 
             <EditText
                 android:id="@+id/et_description"
-                android:layout_width="379dp"
-                android:layout_height="137dp"
+                android:layout_width="@dimen/dips379"
+                android:layout_height="@dimen/dips137"
                 android:backgroundTint="@color/white"
                 android:gravity="start"
                 android:hint="@string/i_need_help_in"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:paddingTop="10dp" />
+                android:paddingTop="@dimen/std10" />
         </LinearLayout>
 
 
@@ -101,10 +101,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="30sp"
+            android:layout_margin="@dimen/std30"
             android:layout_below="@id/ll_description"
             android:background="@color/colorPrimary"
-            android:padding="10dp"
+            android:padding="@dimen/std10"
             android:text="@string/send"
             android:textAllCaps="false"
             android:textColor="@color/white" />

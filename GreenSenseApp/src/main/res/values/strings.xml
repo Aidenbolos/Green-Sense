@@ -134,6 +134,11 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="setTitle">Settings</string>
     <string name="defaulEmail">greensense@gmail.com</string>
     <string name="sett_redirect">Already in settings</string>
+    <string name="settingsBGcol">Change login screen color:</string>
+    <string name="BGcol1">Orange</string>
+    <string name="BGcol2">Green</string>
+    <string name="BGcol3">Gray</string>
+    <string name="saveSetts">Save</string>
     <string-array name="greenhouses">
         <item>Greenhouse 1</item>
         <item>Greenhouse 2</item>

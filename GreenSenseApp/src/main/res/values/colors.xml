@@ -10,6 +10,8 @@
     <color name="humber_blue">#00008B</color>
     <color name="york_red">#DC143C</color>
     <color name="BGgray">#A9A9A9</color>
+    <color name="offWhite">#CCFFFFFF</color>
+    <color name="hintGreen">#83CC23</color>
 
 
 </resources>

@@ -134,6 +134,11 @@ On trouve des espèces de conifères dans presque toutes les régions du monde e
     <string name="setTitle">Paramètres</string>
     <string name="defaulEmail">greensense@gmail.com</string>
     <string name="sett_redirect">Déjà dans les paramètres</string>
+    <string name="settingsBGcol">Changer la couleur de l\'écran de connexion:</string>
+    <string name="BGcol1">L\'Orange</string>
+    <string name="BGcol2">Vert</string>
+    <string name="BGcol3">Gris</string>
+    <string name="saveSetts">Sauver</string>
     <string-array name="greenhouses">
         <item>Serre 1</item>
         <item>Serre 2</item>
