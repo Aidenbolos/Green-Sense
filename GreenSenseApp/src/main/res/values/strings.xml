@@ -66,7 +66,7 @@ Species of conifers can be found in almost all parts of the world, and are often
     <string name="device_2">DEVICE 2</string>
     <string name="device_3">DEVICE 3</string>
     <string name="device_4">DEVICE 4</string>
-    <string name="welcome_guest">Welcome Guest</string>
+    <string name="welcome_guest">Guest</string>
     <string name="continue_as_guest">Continue as Guest</string>
     <string name="cactusTxt">Cactus</string>
     <string name="herbsTxt">Herbs</string>

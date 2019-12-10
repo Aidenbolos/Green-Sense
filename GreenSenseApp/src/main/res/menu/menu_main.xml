@@ -6,7 +6,7 @@
         android:id="@+id/action_picture"
         app:showAsAction="ifRoom"
         android:title="@string/Camera"
-        android:icon="@drawable/ic_camera"/>
+        android:icon="@drawable/ic_camera_light"/>
     <item
         android:id="@+id/action_about"
         app:showAsAction="never"

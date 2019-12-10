@@ -51,22 +51,6 @@
             android:text="Gray" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/DanielOrient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="10dp"
-        android:textAlignment="textStart"
-        android:textSize="20sp"
-        android:text="Lock app to portrait:"/>
-
-    <Switch
-        android:id="@+id/DanielSw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"/>
-
     <Button
         android:id="@+id/settings_btn"
         android:layout_width="wrap_content"
