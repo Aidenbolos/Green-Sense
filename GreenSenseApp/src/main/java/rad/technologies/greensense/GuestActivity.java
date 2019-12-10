@@ -1,11 +1,14 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -103,6 +106,14 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
                     e.printStackTrace();
                 }
                 break;
+            case R.id.action_about:
+                try {
+                    startActivity(new Intent(this,AboutUs.class));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                break;
             case R.id.action_help:
                 try {
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
@@ -136,5 +147,25 @@ public class GuestActivity extends AppCompatActivity implements BottomNavigation
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(GuestActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle("GreenSense");
+        builder.setMessage("Are you sure you want to leave?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                GuestActivity.this.finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

@@ -1,5 +1,6 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -101,6 +103,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     e.printStackTrace();
                 }
                 break;
+            case R.id.action_about:
+                try {
+                    startActivity(new Intent(this,AboutUs.class));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                break;
             case R.id.action_help:
                 try {
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
@@ -125,14 +135,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     Intent intent = new Intent(MainActivity.this, Login.class);
                     startActivity(intent);
                     finish();
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-                break;
-            case R.id.action_about:
-                try {
-                    startActivity(new Intent(this,AboutUs.class));
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();

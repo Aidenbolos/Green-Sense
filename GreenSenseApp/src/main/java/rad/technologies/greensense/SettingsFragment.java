@@ -1,4 +1,6 @@
 package rad.technologies.greensense;
+//R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 import android.os.Bundle;
 

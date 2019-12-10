@@ -1,5 +1,6 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -21,11 +22,14 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Looper;
 import android.provider.Settings;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -60,8 +64,9 @@ public class home_frag extends Fragment {
     private int PERMISSION_ID = 44;
     private FusedLocationProviderClient mFusedLocationClient;
 
-    private TextView addressTxt, statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
+    private TextView statusTxt, tempTxt,windTxt, pressureTxt, humidityTxt,errorTxt;
     private ImageView condition;
+
 
     private boolean checkPermissions(){
         return ActivityCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
@@ -173,13 +178,14 @@ public class home_frag extends Fragment {
                 break;
             case "York":
                 title.setText(getString(R.string.welcome_to) + org + getString(R.string.plGreen));
-                myToolbar.setBackgroundColor(Color.parseColor("#ff0000"));
+                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
                 myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
                 orgImage.setImageResource(R.drawable.yorklogo);
                 break;
             default:
                 title.setText(getString(R.string.welcome_to) + "GreenSense");
-                orgImage.setImageResource(R.drawable.logo);
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                orgImage.setImageResource(R.drawable.plants);
         }
 
         viewFlipper = view.findViewById(R.id.image_view_flipper);

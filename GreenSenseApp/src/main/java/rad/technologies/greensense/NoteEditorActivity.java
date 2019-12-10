@@ -1,10 +1,13 @@
 package rad.technologies.greensense;
 //R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +16,8 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +47,31 @@ public class NoteEditorActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Create Note");
+        myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+
+        //Pickup user email from shared preferences
+        SharedPreferences sharedPref = getSharedPreferences("myPrefs", 0);
+        String defaultEmail = "greensense@gmail.com";
+        String email = sharedPref.getString("email", defaultEmail);
+
+        //Manipulate user email to extract organization name
+        String org = email.substring(email.lastIndexOf("@") + 1).trim();
+        org = org.substring(0, org.lastIndexOf("."));
+        org = org.substring(0, 1).toUpperCase() + org.substring(1);
+
+        switch(org) {
+            case "Humber":
+                myToolbar.setBackgroundColor(Color.parseColor("#00008B"));
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                break;
+            case "York":
+                myToolbar.setBackgroundColor(Color.parseColor("#DC143C"));
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+                break;
+            default:
+                myToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+        }
 
         EditText editText = findViewById(R.id.editText);
         Intent intent = getIntent();

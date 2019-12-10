@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
+//R.A.D. Technologies
+//Ryan McAdie, Aiden Waadallah, Daniel Bujold
 
 public class PlantInfoActivity extends AppCompatActivity implements View.OnTouchListener {
 
