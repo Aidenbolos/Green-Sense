@@ -1,0 +1,15 @@
+1. Unfortunately the OS file is too large to post here on Github. However, if you follow the link below it will take you to the Raspberry Pi download page where you can get it:
+
+https://www.raspberrypi.org/downloads/raspbian/
+
+There you can download the OS as either a torrent or a zip file. For this project it is recommended to download the full "Raspbian Buster with desktop and recommended software". You will need at least an 8GB SD card for this.
+
+
+2. Once downloaded follow the link below for instructions on how to install the OS on your SD card.
+
+https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+
+
+3. Finally, follow the link below for help with the intital power up/configuration setup:
+
+https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/4
