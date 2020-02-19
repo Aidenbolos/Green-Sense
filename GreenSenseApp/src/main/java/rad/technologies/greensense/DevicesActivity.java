@@ -90,14 +90,6 @@ public class DevicesActivity extends AppCompatActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 break;
-            case R.id.action_about:
-                try {
-                    startActivity(new Intent(this,AboutUs.class));
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-                break;
             case R.id.action_help:
                 try {
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
@@ -108,14 +100,6 @@ public class DevicesActivity extends AppCompatActivity implements View.OnClickLi
                 }
                 break;
             // action with ID action_settings was selected
-            case R.id.action_settings:
-                try {
-                    startActivity(new Intent(this,SettingsActivity.class));
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-                break;
             case R.id.action_signout:
                 try {
                     signOut();

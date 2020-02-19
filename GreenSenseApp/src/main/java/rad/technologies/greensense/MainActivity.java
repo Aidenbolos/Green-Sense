@@ -59,11 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.nav_green_one:
-                fragment = new greenhouses_frag();
-                break;
-
-            case R.id.notes:
-                fragment = new notes_frag();
+                fragment = new greenhouse1_frag();
                 break;
         }
 
@@ -103,29 +99,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     e.printStackTrace();
                 }
                 break;
-            case R.id.action_about:
-                try {
-                    startActivity(new Intent(this,AboutUs.class));
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.wrongErr, Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-                break;
             case R.id.action_help:
                 try {
                     Intent browserHelp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikihow.com/Maintain-a-Greenhouse"));
                     startActivity(browserHelp);
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(this,  R.string.wrongErr, Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-                break;
-            // action with ID action_settings was selected
-            case R.id.action_settings:
-                try {
-                    startActivity(new Intent(this,SettingsActivity.class));
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.featErr,Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 break;

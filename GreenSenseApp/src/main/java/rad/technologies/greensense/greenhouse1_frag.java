@@ -20,7 +20,7 @@ import java.util.Objects;
 
 public class greenhouse1_frag extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_greenhouse1_frag, null);
+        @SuppressLint("InflateParams") ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_greenhouse_frag, null);
 
         flTempAndHumidity = root.findViewById(R.id.flTempAndHumidity);
         flManualControl = root.findViewById(R.id.flManualControl);

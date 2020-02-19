@@ -44,7 +44,6 @@ public class Login extends AppCompatActivity {
         inputPassword =  findViewById(R.id.password);
         progressBar =  findViewById(R.id.progressBar);
         Button btnLogin = findViewById(R.id.btn_login);
-        Button btnGuest = findViewById(R.id.btn_guest);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
 
@@ -56,7 +55,6 @@ public class Login extends AppCompatActivity {
             case 1:
                 rootView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                 btnLogin.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                btnGuest.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 break;
             case 2:
                 rootView.setBackgroundColor(getResources().getColor(R.color.BGgray));
@@ -113,14 +111,6 @@ public class Login extends AppCompatActivity {
                     finish();
                 }
             });
-        });
-
-        // Capture button clicks
-        btnGuest.setOnClickListener(view -> {
-
-            // Start NewActivity.class
-            Intent myIntent = new Intent(Login.this, GuestActivity.class);
-            startActivity(myIntent);
         });
     }
     public static boolean isValidEmail(CharSequence target) {

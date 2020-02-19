@@ -8,19 +8,9 @@
         android:title="@string/Camera"
         android:icon="@drawable/ic_camera_light"/>
     <item
-        android:id="@+id/action_about"
-        app:showAsAction="never"
-        android:title="@string/aboutus">
-    </item>
-    <item
         android:id="@+id/action_help"
         app:showAsAction="never"
         android:title="@string/Help" />
-    <item
-        android:id="@+id/action_settings"
-        app:showAsAction="never"
-        android:title="@string/settings">
-    </item>
     <item
         android:id="@+id/action_signout"
         app:showAsAction="never"
