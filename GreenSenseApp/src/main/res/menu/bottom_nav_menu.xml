@@ -11,9 +11,4 @@
         android:title="@string/Green_Houses" />
 
 
-    <item
-        android:id="@+id/notes"
-        android:icon="@drawable/ic_note_black_24dp"
-        android:title="@string/Notes" />
-
 </menu>

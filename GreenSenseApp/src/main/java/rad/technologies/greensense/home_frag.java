@@ -185,14 +185,14 @@ public class home_frag extends Fragment {
             default:
                 title.setText(getString(R.string.welcome_to) + getString(R.string.greensenseTitle));
                 myToolbar.setTitleTextColor(Color.WHITE);
-                orgImage.setImageResource(R.drawable.plants);
+//                orgImage.setImageResource(R.drawable.plants);
         }
 
         viewFlipper = view.findViewById(R.id.image_view_flipper);
         viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
         viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
 
-       startSlideshow();
+        startSlideshow();
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
         getLastLocation();

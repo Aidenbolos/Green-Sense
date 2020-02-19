@@ -14,15 +14,6 @@
     <fragment
         android:id="@+id/navigation_greenhouse1"
         android:label="@string/Green_House_1"
-        tools:layout="@layout/fragment_greenhouse1_frag" />
+        tools:layout="@layout/fragment_greenhouse_frag" />
 
-    <fragment
-        android:id="@+id/navigation_greenhouse2"
-        android:label="@string/Green_House_2"
-        tools:layout="@layout/fragment_greenhouse2_frag" />
-
-    <fragment
-        android:id="@+id/navigation_notes"
-        android:label="@string/Notes"
-        tools:layout="@layout/fragment_notes_frag" />
 </navigation>

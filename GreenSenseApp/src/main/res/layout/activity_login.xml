@@ -64,15 +64,6 @@
             android:text="@string/btn_login"
             android:textColor="@android:color/black" />
 
-        <Button
-            android:id="@+id/btn_guest"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/std40"
-            android:background="@drawable/rounded_button"
-            android:text="@string/continue_as_guest"
-            android:textColor="@android:color/black" />
-
         <!-- Link to Login Screen -->
 
     </LinearLayout>
