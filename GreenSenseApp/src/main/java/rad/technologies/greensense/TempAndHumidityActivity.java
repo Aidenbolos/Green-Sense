@@ -19,17 +19,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
@@ -48,9 +46,9 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     private FirebaseFirestore db;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    SeekBar sbTemp, sbHumidity;
-    TextView tvGreenHouseTemp, tvGreenHouseHumidity;
-    ImageView ivRefreshTemp, ivRefreshHumidity;
+    SeekBar sbTemp, sbHumidity, sbGasLevel;
+    TextView tvGreenHouseTemp, tvGreenHouseHumidity,tvGasLevel;
+    ImageView ivRefreshTemp, ivRefreshHumidity, ivRefreshGas;
 
     TextView tvMoistureLevel;
     ImageView ivRefreshMoistureLevel;
@@ -96,25 +94,31 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
 
         sbTemp = findViewById(R.id.sbTemp);
         sbHumidity = findViewById(R.id.sbHumidity);
+        sbGasLevel = findViewById(R.id.sbGasLevel);
         tvGreenHouseHumidity = findViewById(R.id.tvGreenHouseHumidity);
         tvGreenHouseTemp = findViewById(R.id.tvGreenHouseTemp);
+        tvGasLevel = findViewById(R.id.tvGasLevel);
         ivRefreshHumidity = findViewById(R.id.ivRefreshHumidity);
         ivRefreshTemp = findViewById(R.id.ivRefreshTemp);
+        ivRefreshGas = findViewById(R.id.ivRefreshGasLevel);
         tvMoistureLevel = findViewById(R.id.tvMoistureLevel);
         ivRefreshMoistureLevel = findViewById(R.id.ivRefreshMoistureLevel);
         spMoistureLevel = findViewById(R.id.spMoistureLevel);
         ivRefreshMoistureLevel.setOnClickListener(this);
         ivRefreshTemp.setOnClickListener(this);
         ivRefreshHumidity.setOnClickListener(this);
+        ivRefreshGas.setOnClickListener(this);
 
 
         SetRandomTempValue();
         SetRandomHumidityValue();
         SetMoistureLevelValue();
+        SetGasValue();
 
         sbHumidity.setEnabled(false);
         sbTemp.setEnabled(false);
         spMoistureLevel.setEnabled(false);
+        sbGasLevel.setEnabled(false);
 
 
     }
@@ -168,7 +172,6 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomTempValue() {
-
         db.collection("Readings").document("Values").collection("Data")
                 .get()
                 .addOnCompleteListener(task -> {
@@ -222,6 +225,25 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
                 });
     }
 
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void SetGasValue() {
+        db.collection("Readings").document("Values").collection("Data")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            tvGasLevel.setText("Air Quality =" + document.get("AirQ") + "AQI");
+                            int airq = ((Long) Objects.requireNonNull(document.get("AirQ"))).intValue();
+                            airq = airq / 5;
+                            sbGasLevel.setProgress(airq);
+                        }
+                    } else {
+                        tvGasLevel.setText(getString(R.string.docErr) + task.getException());
+                    }
+                });
+    }
+
     @Override
     public void onClick(View v) {
 
@@ -236,7 +258,9 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
             case R.id.ivRefreshMoistureLevel:
                 SetMoistureLevelValue();
                 break;
-
+            case R.id.ivRefreshGasLevel:
+                SetGasValue();
+                break;
 
         }
 
