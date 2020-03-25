@@ -21,76 +21,100 @@
             android:layout_marginEnd="@dimen/std20"
             android:text="@string/welcome_to_greenhouse_1"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/title_text_size"
+            android:textSize="25dp"
             android:textStyle="bold" />
-
-        <RelativeLayout
-            android:id="@+id/rlRemoteDevice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvGreenSense"
-            android:background="@drawable/round_bg_white"
-            android:layout_marginEnd="@dimen/padding_start_end_20dp"
-            android:layout_marginStart="@dimen/padding_start_end_20dp"
-            android:layout_marginTop="@dimen/std20">
-
-
-            <TextView
-                android:id="@+id/tvGreenHouseControlSystem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/greenhouse_control_system"
-                android:layout_marginTop="@dimen/std20"
-                android:layout_centerHorizontal="true"
-                android:textSize="@dimen/middle_text_size"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-
-
-            <ImageView
-                android:id="@+id/ivRemote"
-                android:layout_width="@dimen/std50"
-                android:layout_height="@dimen/std80"
-                android:layout_marginBottom="@dimen/std10"
-                android:layout_below="@id/tvGreenHouseControlSystem"
-                android:layout_toStartOf="@id/tvRemoteDevice"
-                android:src="@drawable/remote"
-                android:contentDescription="@string/app_name" />
-
-
-            <TextView
-                android:id="@+id/tvRemoteDevice"
-                android:layout_width="@dimen/std150"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvGreenHouseControlSystem"
-                android:layout_centerHorizontal="true"
-                android:text="@string/remote_device"
-                android:layout_marginTop="@dimen/std20"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/black" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/sw_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/std10"
-                android:checked="true"
-                android:layout_below="@id/tvRemoteDevice"
-                android:textStyle="bold"
-                android:theme="@style/SCBSwitch" />
-
-
-        </RelativeLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/rlRemoteDevice"
+            android:layout_below="@id/tvGreenSense"
             android:layout_margin="@dimen/std20"
             android:orientation="vertical">
 
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textSize="22dp"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temperature Status"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/tempStat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXAMPLE" />
+
+            <TextView
+                android:id="@+id/blank0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Humidity Status"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/humStat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXAMPLE" />
+
+            <TextView
+                android:id="@+id/blank1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Water Level Status"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/waterStat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXAMPLE" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Air Quality Status"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/gasStat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXAMPLE" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,19 +124,19 @@
 
                 <FrameLayout
                     android:id="@+id/flTempAndHumidity"
-                    android:layout_width="@dimen/std0"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="1dp"
+                    android:layout_height="150dp"
                     android:layout_margin="@dimen/std10"
+                    android:layout_weight="1"
                     android:background="@drawable/round_bg_white">
 
                     <ImageView
                         android:layout_width="@dimen/std50"
                         android:layout_height="@dimen/std50"
-                        android:src="@drawable/temperature"
-                        android:layout_marginTop="@dimen/padding_start_end_20dp"
                         android:layout_marginStart="@dimen/std20"
-                        android:contentDescription="@string/app_name" />
+                        android:layout_marginTop="@dimen/padding_start_end_20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/temperature" />
 
 
                     <TextView
@@ -133,8 +157,8 @@
 
                 <FrameLayout
                     android:id="@+id/flManualControl"
-                    android:layout_width="@dimen/std0"
-                    android:layout_height="match_parent"
+                    android:layout_width="1dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
                     android:layout_margin="@dimen/std10"
                     android:paddingStart="@dimen/padding_start_end_20dp"
