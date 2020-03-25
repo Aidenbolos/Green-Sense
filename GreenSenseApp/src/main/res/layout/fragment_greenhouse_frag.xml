@@ -16,7 +16,6 @@
             android:id="@+id/tvGreenSense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/std20"
             android:layout_marginTop="@dimen/std20"
             android:layout_marginEnd="@dimen/std20"
             android:text="@string/welcome_to_greenhouse_1"
@@ -27,14 +26,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+
             android:layout_height="match_parent"
             android:layout_below="@id/tvGreenSense"
-            android:layout_margin="@dimen/std20"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/textView4"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Overview"
@@ -42,6 +43,7 @@
 
             <TextView
                 android:id="@+id/textView5"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Temperature Status"
@@ -51,7 +53,7 @@
                 android:id="@+id/tempStat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EXAMPLE" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/blank0"
@@ -61,6 +63,7 @@
 
             <TextView
                 android:id="@+id/textView8"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Humidity Status"
@@ -70,7 +73,7 @@
                 android:id="@+id/humStat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EXAMPLE" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/blank1"
@@ -83,13 +86,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Water Level Status"
+                android:textColor="@android:color/black"
                 android:textSize="16dp"/>
 
             <TextView
                 android:id="@+id/waterStat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EXAMPLE" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -99,6 +103,7 @@
 
             <TextView
                 android:id="@+id/textView14"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Air Quality Status"
@@ -108,7 +113,7 @@
                 android:id="@+id/gasStat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EXAMPLE" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView16"

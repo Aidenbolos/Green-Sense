@@ -12,6 +12,8 @@
     <color name="BGgray">#A9A9A9</color>
     <color name="offWhite">#CCFFFFFF</color>
     <color name="hintGreen">#83CC23</color>
+    <color name="yellow">#ffae42</color>
+    <color name="red">#ff0000</color>
 
 
 </resources>
