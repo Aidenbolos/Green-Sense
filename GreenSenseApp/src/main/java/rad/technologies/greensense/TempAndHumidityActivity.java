@@ -120,6 +120,10 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
         spMoistureLevel.setEnabled(false);
         sbGasLevel.setEnabled(false);
 
+        sbHumidity.getThumb().mutate().setAlpha(0);
+        sbTemp.getThumb().mutate().setAlpha(0);
+        spMoistureLevel.getThumb().mutate().setAlpha(0);
+        sbGasLevel.getThumb().mutate().setAlpha(0);
 
     }
 
@@ -191,7 +195,6 @@ public class TempAndHumidityActivity extends AppCompatActivity implements View.O
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void SetRandomHumidityValue() {
-
         db.collection("Readings").document("Values").collection("Data")
                 .get()
                 .addOnCompleteListener(task -> {

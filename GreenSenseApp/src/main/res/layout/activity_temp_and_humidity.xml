@@ -88,8 +88,7 @@
                 android:layout_marginTop="@dimen/std10"
                 android:layout_marginBottom="@dimen/std10"
                 android:progress="50"
-                android:progressDrawable="@drawable/seekbar_style"
-                android:thumb="@drawable/custom_thumb" />
+                android:progressDrawable="@drawable/seekbar_style" />
 
 
         </RelativeLayout>
@@ -158,8 +157,7 @@
                 android:layout_marginTop="@dimen/std10"
                 android:layout_marginBottom="@dimen/std10"
                 android:progress="50"
-                android:progressDrawable="@drawable/seekbar_style"
-                android:thumb="@drawable/custom_thumb" />
+                android:progressDrawable="@drawable/seekbar_style"/>
 
 
         </RelativeLayout>
@@ -229,8 +227,8 @@
                 android:layout_marginTop="@dimen/std10"
                 android:layout_marginBottom="@dimen/std10"
                 android:progress="50"
-                android:progressDrawable="@drawable/seekbar_style"
-                android:thumb="@drawable/custom_thumb" />
+                android:progressDrawable="@drawable/seekbar_style" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -296,8 +294,7 @@
                 android:layout_marginTop="@dimen/std10"
                 android:layout_marginBottom="@dimen/std10"
                 android:progress="50"
-                android:progressDrawable="@drawable/seekbar_style"
-                android:thumb="@drawable/custom_thumb" />
+                android:progressDrawable="@drawable/seekbar_style" />
         </RelativeLayout>
 
     </RelativeLayout>
